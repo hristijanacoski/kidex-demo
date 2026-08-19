@@ -89,10 +89,9 @@
   /* ---------------------------------------------------------------------
      Contact form
      Static site: no backend. Opens the visitor's email client pre-filled
-     with the message via a mailto: link. Replace CONTACT_EMAIL below with
-     the real KIDEX address before launch.
+    with the message via a mailto: link.
   --------------------------------------------------------------------- */
-  var CONTACT_EMAIL = ""; /* TODO: add the KIDEX contact email address */
+  var CONTACT_EMAIL = "info@kidex.mk";
 
   var contactForm = document.querySelector("#contact-form");
   if (contactForm) {
@@ -110,7 +109,7 @@
 
       if (!CONTACT_EMAIL) {
         if (status) {
-          status.textContent = "This form isn't connected to an inbox yet — add a contact email in js/script.js.";
+          status.textContent = "This form is not connected to an inbox yet.";
         }
         return;
       }

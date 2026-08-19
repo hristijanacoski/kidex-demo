@@ -12,15 +12,15 @@
   --gold: #D0B36E;
   --gold-accent: #AB945E;
   --gold-text: #806F46; /* darkened gold — meets 4.5:1 text contrast on light backgrounds */
-  --white: #F2EFE9;
-  --bg-light: #F7F7F5;
+  --white: #DED8CE;
+  --bg-light: #ECE9E2;
   --bg-line: rgba(41, 51, 51, 0.12);
-  --bg-line-on-dark: rgba(255, 255, 255, 0.14);
+  --bg-line-on-dark: rgba(232, 227, 218, 0.14);
 
   /* Text */
   --text-body: #33403f;
   --text-muted: #66716f;
-  --text-on-dark: #f2efe9;
+  --text-on-dark: #DED8CE;
   --text-on-dark-muted: #b9c2c0;
 
   /* Type */
@@ -278,21 +278,24 @@ section.on-dark .eyebrow .sprig path { stroke: var(--gold); }
   background: var(--charcoal-dark);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: var(--gutter);
+  justify-content: flex-start;
+  padding: 7.5rem var(--gutter) 2.5rem;
   transform: translateX(100%);
-  transition: transform var(--dur-m) var(--ease);
+  visibility: hidden;
+  transition: transform var(--dur-m) var(--ease), visibility 0s linear var(--dur-m);
 }
-.mobile-panel.is-open { transform: translateX(0); }
-.mobile-panel nav { display: flex; flex-direction: column; gap: 1.6rem; }
+.mobile-panel.is-open { transform: translateX(0); visibility: visible; transition-delay: 0s; }
+.mobile-panel nav { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--bg-line-on-dark); }
 .mobile-panel a {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 8vw, 2.6rem);
+  font-size: clamp(1.65rem, 7vw, 2.25rem);
   color: var(--text-on-dark);
   font-weight: 500;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--bg-line-on-dark);
 }
 .mobile-panel a[aria-current="page"] { color: var(--gold); }
-.mobile-panel .btn { margin-top: 2rem; align-self: flex-start; }
+.mobile-panel .btn { width: min(100%, 22rem); margin-top: 2rem; align-self: flex-start; }
 
 body.menu-open { overflow: hidden; }
 
@@ -529,8 +532,14 @@ section.on-dark .section-head h2 { color: var(--white); }
 
 /* ---------- IT Solutions ---------- */
 .it-solutions { position: relative; overflow: hidden; background: var(--charcoal-dark); border-top: 1px solid rgba(208,179,110,0.2); }
+section.it-solutions.it-solutions::after { background-image: none !important; opacity: 0 !important; }
 .it-solutions::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(90deg, transparent, black 18%, black 82%, transparent); pointer-events: none; }
-.it-solutions .container { position: relative; z-index: 1; }
+.it-solutions .container { position: relative; z-index: 2; }
+.it-code-background { position: absolute; z-index: 1; margin: 0; color: var(--gold); opacity: 0.22; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: clamp(0.7rem, 1.1vw, 0.95rem); line-height: 1.9; letter-spacing: 0.04em; pointer-events: none; user-select: none; }
+.it-code-background code { font: inherit; }
+.it-code-one { top: 9%; right: 4%; transform: rotate(4deg); }
+.it-code-two { right: 32%; bottom: 8%; opacity: 0.16; transform: rotate(-5deg); }
+.it-code-three { top: 42%; left: 3%; opacity: 0.13; transform: rotate(-3deg); }
 .it-solutions .section-head { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .it-solutions .section-head h2 { max-width: 18ch; }
 .it-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--bg-line-on-dark); }
@@ -862,6 +871,10 @@ section.on-dark .section-head h2 { color: var(--white); }
   .support-photo-grid { grid-template-columns: 1fr; }
   .support-photo-copy { max-width: none; }
   .it-card { display: block; }
+  .it-code-background { font-size: 0.66rem; line-height: 1.7; }
+  .it-code-one { top: 8%; right: -4rem; transform: rotate(4deg) scale(0.82); transform-origin: top right; }
+  .it-code-two { right: -3rem; bottom: 5%; transform: rotate(-5deg) scale(0.78); transform-origin: bottom right; }
+  .it-code-three { top: 45%; left: -4rem; transform: rotate(-3deg) scale(0.76); transform-origin: top left; }
   .it-visual { margin-top: 1.5rem; }
   .it-cta { align-items: flex-start; flex-direction: column; }
   .footer-top { grid-template-columns: 1fr; }
