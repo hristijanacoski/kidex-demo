@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="360" viewBox="0 0 420 360">
+  <defs>
+    <g id="ear" fill="#D0B36E" stroke="#D0B36E" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M42 254 C41 188 43 116 54 42" fill="none" stroke-width="1.5"/>
+      <g stroke-width="0.55">
+        <path d="M51 58 C40 52 32 45 27 36 C37 38 46 43 53 50 Z"/>
+        <path d="M54 68 C64 61 73 58 83 59 C76 67 66 71 55 73 Z"/>
+        <path d="M49 78 C38 72 30 65 25 56 C35 58 44 63 51 70 Z"/>
+        <path d="M52 89 C62 82 72 80 82 82 C75 89 65 93 53 94 Z"/>
+        <path d="M47 99 C36 93 28 86 23 77 C33 80 42 84 49 91 Z"/>
+        <path d="M50 110 C60 103 70 101 80 103 C73 110 63 114 51 115 Z"/>
+        <path d="M45 121 C34 115 26 108 21 99 C31 102 40 106 47 113 Z"/>
+        <path d="M48 132 C58 125 68 123 78 125 C71 132 61 136 49 137 Z"/>
+        <path d="M43 143 C32 137 24 130 19 121 C29 124 38 128 45 135 Z"/>
+        <path d="M46 154 C56 147 66 145 76 147 C69 154 59 158 47 159 Z"/>
+        <path d="M41 165 C30 159 22 152 17 143 C27 146 36 150 43 157 Z"/>
+      </g>
+    </g>
+  </defs>
+  <use href="#ear" xlink:href="#ear" transform="translate(38 30) rotate(-8 42 127)"/>
+  <use href="#ear" xlink:href="#ear" transform="translate(286 190) scale(.48) rotate(18 42 127)" opacity=".58"/>
+</svg>
