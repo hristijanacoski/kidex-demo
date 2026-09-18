@@ -1,0 +1,10 @@
+# Apache hosting: retain links from the previous WordPress site.
+# Back up the existing site and replace its WordPress rewrite block on deployment.
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^about-us/?$ about.html [R=301,L]
+RewriteRule ^what-we-do/?$ services.html [R=301,L]
+RewriteRule ^contact/?$ contact.html [R=301,L]
+</IfModule>
