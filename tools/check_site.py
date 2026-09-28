@@ -64,7 +64,8 @@ with sync_playwright() as p:
     page.locator('#cf-message').fill('Test message & special characters: + % ?')
     page.locator('button[type="submit"]').click()
     assert not page.locator('#cf-email').evaluate('e => e.validity.valid')
-    assert page.locator('.form-status').inner_text()==''
+    assert page.locator('.form-status').inner_text()!=''
+    assert page.locator('#cf-email').get_attribute('aria-invalid')=='true'
     page.locator('#cf-email').fill('test@example.com')
     page.locator('#cf-name').fill('   ')
     page.locator('button[type="submit"]').click()

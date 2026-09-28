@@ -52,6 +52,14 @@ for filename in PAGES:
             url = tag.get(attr, '')
             if url.startswith(('images/','css/','js/','favicon/')):
                 tag[attr] = '../'+url
+    for tag in mk.select('[srcset]'):
+        candidates = []
+        for candidate in tag['srcset'].split(','):
+            parts = candidate.strip().split()
+            if parts and parts[0].startswith('images/'):
+                parts[0] = '../' + parts[0]
+            candidates.append(' '.join(parts))
+        tag['srcset'] = ', '.join(candidates)
     links = mk.select('.language-switch a')
     links[0]['href'] = '../'+filename
     links[0].attrs.pop('aria-current',None)
@@ -65,9 +73,11 @@ for page in [ROOT / p for p in PAGES]+[ROOT/'mk'/p for p in PAGES]:
     soup=BeautifulSoup(page.read_text(encoding='utf-8'),'html.parser')
     ids=[t['id'] for t in soup.select('[id]')]
     if len(ids) != len(set(ids)): raise ValueError(f'Duplicate IDs: {page}')
-    for tag in soup.select('[href],[src]'):
-        for attr in ('href','src'):
-            url=urlsplit(tag.get(attr,''))
+    for tag in soup.select('[href],[src],[srcset]'):
+        references = [tag.get(attr, '') for attr in ('href', 'src')]
+        references += [candidate.strip().split()[0] for candidate in tag.get('srcset', '').split(',') if candidate.strip()]
+        for reference in references:
+            url=urlsplit(reference)
             if url.scheme or url.netloc: continue
             target=(page.parent/url.path) if url.path else page
             if not target.exists(): raise ValueError(f'Broken resource {page}: {url.geturl()}')
