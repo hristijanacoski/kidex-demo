@@ -91,7 +91,8 @@ const server = http.createServer((req, res) => {
                 });
                 return strings;
               });
-              const missing = [...new Set(strings.filter(s => !(s in catalog)))];
+              // Empty alt text is intentional for decorative images; the build also leaves it untranslated.
+              const missing = [...new Set(strings.filter(s => s && !(s in catalog)))];
               assert.deepEqual(missing, [], `Missing Macedonian build translations in ${name}`);
             }
             const urls = await page.locator('[href], [src]').evaluateAll(elements => elements.flatMap(e => [e.getAttribute('href'), e.getAttribute('src')].filter(Boolean)));
