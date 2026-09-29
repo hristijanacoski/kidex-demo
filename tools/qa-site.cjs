@@ -10,6 +10,7 @@ const artifacts = path.join(root, '.audit');
 fs.mkdirSync(artifacts, { recursive: true });
 const report = { browsers: {}, checks: [], failures: [], accessibility: [], limitations: [] };
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
+// Bind a temporary loopback server for real browser behavior without touching a live host.
 const server = http.createServer((req, res) => {
   let requested = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
   if (requested.endsWith('/')) requested += 'index.html';
@@ -20,10 +21,12 @@ const server = http.createServer((req, res) => {
     res.end(error ? 'Not found' : data);
   });
 });
+// Record each failure and continue so a single run reports all regressions.
 async function check(browser, name, task) {
   try { await task(); report.checks.push({ browser, name, result: 'PASS' }); }
   catch (error) { report.failures.push({ browser, name, error: error.message }); console.log(`FAIL ${browser}: ${name}: ${error.message.split('\n')[0]}`); }
 }
+// Exercise layouts, focus, mobile navigation, language selection and form fallbacks.
 (async () => {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const base = `http://127.0.0.1:${server.address().port}/`;
@@ -52,6 +55,12 @@ async function check(browser, name, task) {
             await page.evaluate(() => Promise.all(Array.from(document.images, i => i.decode())));
             assert.equal(await page.locator('h1').count(), 1);
             assert.equal(await page.locator('html').getAttribute('lang'), lang ? 'mk' : 'en');
+          if (viewport.width <= 860) {
+            const brand = await page.locator('.site-header .brand').boundingBox();
+            assert(Math.abs(brand.x + brand.width / 2 - viewport.width / 2) < 1, 'Mobile logo is not centered');
+            assert(await page.locator('.language-toggle').isVisible());
+            assert(!(await page.locator('.language-options').isVisible()));
+          }
             assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'Horizontal overflow');
             assert(await page.evaluate(() => {
               const ids = [...document.querySelectorAll('[id]')].map(e => e.id);
@@ -102,6 +111,34 @@ async function check(browser, name, task) {
           await page.waitForFunction(() => document.querySelector('.language-switch a:not([aria-current])').hash === '#optimization');
           await page.evaluate(() => { location.hash = ''; });
           await page.waitForFunction(() => !document.querySelector('.language-switch a:not([aria-current])').hash);
+        });
+        await check(engine, `${lang}Mobile language dropdown keyboard, dismissal and resize`, async () => {
+          await page.goto(base + lang + 'services.html#development');
+          const toggle = page.locator('.language-toggle');
+          const options = page.locator('.language-options');
+          await toggle.focus(); await page.keyboard.press('Enter');
+          assert.equal(await toggle.getAttribute('aria-expanded'), 'true');
+          assert(await options.isVisible());
+          await page.keyboard.press('ArrowDown');
+          assert(await options.locator('a:not([aria-current])').evaluate(e => e === document.activeElement));
+          await page.keyboard.press('Escape');
+          assert(await toggle.evaluate(e => e === document.activeElement));
+          assert(!(await options.isVisible()));
+          await page.keyboard.press('ArrowUp');
+          assert(await options.locator('a').last().evaluate(e => e === document.activeElement));
+          await page.keyboard.press('Escape');
+          await toggle.click(); await page.locator('h1').click();
+          assert(!(await options.isVisible()));
+          await toggle.click(); await page.locator('.hamburger').click();
+          assert(!(await options.isVisible()));
+          await page.keyboard.press('Escape');
+          await toggle.click();
+          await page.setViewportSize({ width: 1440, height: 900 });
+          await page.waitForFunction(() => document.activeElement === document.querySelector('.language-options a[aria-current]'));
+          assert(await options.isVisible());
+          await page.setViewportSize({ width: 390, height: 844 });
+          await page.waitForFunction(() => document.activeElement === document.querySelector('.language-toggle'));
+          assert(!(await options.isVisible()));
         });
         await check(engine, `${lang}Focus survives desktop-to-mobile resize`, async () => {
           await page.setViewportSize({ width: 1440, height: 900 });

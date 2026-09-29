@@ -1,1 +1,2 @@
+# Build-time HTML parser only. The deployed website has no Python dependencies.
 beautifulsoup4==4.14.3

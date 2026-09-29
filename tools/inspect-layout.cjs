@@ -10,6 +10,7 @@ const catalog = JSON.parse(fs.readFileSync(path.join(root, 'translations/mk.json
 fs.mkdirSync(output, { recursive: true });
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml' };
 const server = http.createServer((req, res) => {
+  // Resolve only workspace files; reject paths that escape the local preview root.
   const file = path.resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname));
   if (!file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
   fs.readFile(file, (error, data) => {
@@ -27,6 +28,7 @@ const server = http.createServer((req, res) => {
     page.on('pageerror', error => errors.push(error.message));
     page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
     const base = `http://127.0.0.1:${server.address().port}/`;
+    // Check both sides of CSS breakpoints, not just common phone/desktop dimensions.
     for (const width of [320, 360, 390, 620, 621, 768, 860, 861, 1024, 1080, 1081, 1100, 1101, 1440, 1920]) {
       await page.setViewportSize({ width, height: 900 });
       for (const lang of ['', 'mk/']) {
@@ -78,6 +80,7 @@ const server = http.createServer((req, res) => {
           });
           assert.deepEqual(issues, [], `${lang}${name} at ${width}px: ${issues.join(', ')}`);
           if (width === 390) {
+            // Exact English text must exist in the catalog before regenerating MK pages.
             if (!lang) {
               const strings = await page.evaluate(() => {
                 const strings = [];
@@ -109,9 +112,11 @@ const server = http.createServer((req, res) => {
       }
       console.log(`PASS: all eight pages at ${width}px`);
     }
+    // After static layouts, exercise focus restoration and cross-language hash links.
     await page.setViewportSize({ width: 390, height: 844 });
     for (const lang of ['', 'mk/']) {
       await page.goto(`${base}${lang}services.html#laboratory-equipment`);
+      await page.locator('.language-toggle').click();
       await page.locator('.language-switch a:not([aria-current])').click();
       assert(page.url().endsWith('services.html#laboratory-equipment'));
       assert.equal(await page.locator('html').getAttribute('lang'), lang ? 'en' : 'mk');

@@ -1,3 +1,5 @@
+# Static-host equivalents of the legacy WordPress redirects in .htaccess.
+# Keep both trailing-slash variants so old inbound links continue to work.
 /about-us/ /about.html 301
 /about-us /about.html 301
 /what-we-do/ /services.html 301

@@ -1,8 +1,10 @@
 # Apache hosting: retain links from the previous WordPress site.
 # Back up the existing site and replace its WordPress rewrite block on deployment.
+# Serve the static homepage and preserve Macedonian characters in HTML responses.
 DirectoryIndex index.html
 AddDefaultCharset UTF-8
 <IfModule mod_rewrite.c>
+# These permanent redirects preserve old inbound links; existing files stay unchanged.
 RewriteEngine On
 RewriteRule ^about-us/?$ about.html [R=301,L]
 RewriteRule ^what-we-do/?$ services.html [R=301,L]

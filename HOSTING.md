@@ -1,5 +1,7 @@
 # KIDEX website
 
+For the code map, responsive rules, commenting conventions, and browser checks, see [MAINTENANCE.md](MAINTENANCE.md).
+
 The website is ready for static hosting. There are four English pages at the root and four Macedonian pages in `mk/`. No Node.js, PHP, database, CSS framework or build service is required on the host.
 
 ## Upload

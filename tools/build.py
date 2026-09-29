@@ -1,17 +1,24 @@
-"""Generate the Macedonian pages and an upload-ready static site. No server runtime needed."""
+"""Generate Macedonian pages and a static upload archive.
+
+Run from any directory: python tools/build.py
+English root pages are the source; translations/mk.json maps their text to MK.
+This command rewrites root SEO tags and mk/ pages, validates local references,
+then packages public files. It never uploads files or deploys the website.
+"""
 from pathlib import Path
 from urllib.parse import urlsplit
 from bs4 import BeautifulSoup, Comment, Doctype
 import json
-import shutil
 import zipfile
 
+# Resolve paths from this file, not the caller's current working directory.
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ('index.html', 'about.html', 'services.html', 'contact.html')
 BASE = 'https://kidex.mk/'
 catalog = json.loads((ROOT / 'translations/mk.json').read_text(encoding='utf-8'))
 
 def translate(value):
+    """Translate exact text while preserving whitespace around inline elements."""
     key = value.strip()
     if not key:
         return value
@@ -20,6 +27,7 @@ def translate(value):
     return value.replace(key, catalog[key], 1)
 
 def seo(soup, filename, lang):
+    """Replace generated metadata so repeated builds do not duplicate SEO tags."""
     for tag in soup.select('link[rel="canonical"],link[hreflang],meta[property="og:locale"],meta[property="og:locale:alternate"]'):
         tag.decompose()
     suffix = '' if filename == 'index.html' else filename
@@ -32,6 +40,7 @@ def seo(soup, filename, lang):
     soup.head.append(soup.new_tag('meta', property='og:locale', content='mk_MK' if lang=='mk' else 'en_GB'))
     soup.head.append(soup.new_tag('meta', property='og:locale:alternate', content='en_GB' if lang=='mk' else 'mk_MK'))
 
+# Reuse source markup so language versions keep matching components and anchor IDs.
 (ROOT / 'mk').mkdir(exist_ok=True)
 for filename in PAGES:
     source = ROOT / filename
@@ -40,18 +49,22 @@ for filename in PAGES:
     source.write_text(str(en).rstrip()+'\n', encoding='utf-8')
     mk = BeautifulSoup(str(en), 'html.parser')
     mk.html['lang'] = 'mk'
+    # Comments, code and SVG geometry are not visible copy and must not be translated.
     for node in list(mk.find_all(string=True)):
         if isinstance(node, (Comment, Doctype)) or node.parent.name in ('script','style') or node.find_parent('svg'):
             continue
         node.replace_with(translate(str(node)))
+    # Accessibility labels and search/social descriptions need translations too.
     for tag in mk.select('[alt],[aria-label],meta[name="description"],meta[property="og:title"],meta[property="og:description"]'):
         for attr in ('alt', 'aria-label', 'content'):
             if tag.has_attr(attr): tag[attr] = translate(tag[attr])
+    # MK lives one folder deeper. Page-to-page links stay local; shared assets go up a level.
     for tag in mk.select('[src],[href]'):
         for attr in ('src','href'):
             url = tag.get(attr, '')
             if url.startswith(('images/','css/','js/','favicon/')):
                 tag[attr] = '../'+url
+    # Rewrite each responsive-image URL while retaining its width/density descriptor.
     for tag in mk.select('[srcset]'):
         candidates = []
         for candidate in tag['srcset'].split(','):
@@ -60,6 +73,7 @@ for filename in PAGES:
                 parts[0] = '../' + parts[0]
             candidates.append(' '.join(parts))
         tag['srcset'] = ', '.join(candidates)
+    # Both versions use the same two language links, but only MK is current here.
     links = mk.select('.language-switch a')
     links[0]['href'] = '../'+filename
     links[0].attrs.pop('aria-current',None)
@@ -68,7 +82,8 @@ for filename in PAGES:
     seo(mk, filename, 'mk')
     (ROOT / 'mk' / filename).write_text(str(mk).rstrip()+'\n',encoding='utf-8')
 
-# Validate actual internal resources and anchor destinations before packaging.
+# Fail before packaging if a local file, anchor target or unique ID is invalid.
+# External URLs are intentionally not fetched by the build.
 for page in [ROOT / p for p in PAGES]+[ROOT/'mk'/p for p in PAGES]:
     soup=BeautifulSoup(page.read_text(encoding='utf-8'),'html.parser')
     ids=[t['id'] for t in soup.select('[id]')]
@@ -85,11 +100,13 @@ for page in [ROOT / p for p in PAGES]+[ROOT/'mk'/p for p in PAGES]:
                 linked=BeautifulSoup(target.read_text(encoding='utf-8'),'html.parser')
                 if not linked.find(id=url.fragment): raise ValueError(f'Broken anchor {page}: {url.geturl()}')
 
+# Home pages use their folder URLs; the other pages keep explicit .html paths.
 urls=[BASE+prefix+('' if f=='index.html' else f) for prefix in ('','mk/') for f in PAGES]
 sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{u}</loc></url>\n' for u in urls)+'</urlset>\n'
 (ROOT/'sitemap.xml').write_text(sitemap,encoding='utf-8')
 dist=ROOT/'dist'
 dist.mkdir(exist_ok=True)
+# An explicit allowlist keeps tooling, audit screenshots and Git metadata out of uploads.
 with zipfile.ZipFile(dist/'kidex-hosting.zip','w',zipfile.ZIP_DEFLATED) as archive:
     for name in (*PAGES,'mk','css','js','images','favicon','.htaccess','_redirects','robots.txt','sitemap.xml'):
         path=ROOT/name

@@ -1,328 +1,353 @@
 <!DOCTYPE html>
+<!-- Maintenance: edit root HTML and translations/mk.json; tools/build.py regenerates mk/.
+Shared styles and browser behavior live in css/style.css and js/script.js. -->
 <html lang="mk"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Услуги — KIDEX | Иновации, консалтинг и решенија</title>
-<meta content="Консалтинг, развој на производи и ИТ решенија од KIDEX за производители на храна и современи бизниси." name="description">
-<meta content="#293333" name="theme-color">
-<meta content="website" property="og:type">
-<meta content="KIDEX" property="og:site_name">
-<meta content="Услуги — KIDEX" property="og:title">
-<meta content="KIDEX консалтинг, развој на производи и ИТ решенија." property="og:description">
-<meta content="https://kidex.mk/images/kidex-logo-horizontal.png" property="og:image">
-<meta content="https://kidex.mk/mk/services.html" property="og:url">
-<link href="../favicon/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
-<link href="../favicon/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
-<link href="../favicon/favicon-180.png" rel="apple-touch-icon" sizes="180x180">
-<link href="../favicon/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="../css/style.css?v=26" rel="stylesheet">
-<noscript><style>.hamburger { display:none !important; } .main-nav { display:flex !important; flex-wrap:wrap; gap:.8rem; } .site-header .container { display:flex; flex-wrap:wrap; padding-block:.75rem; } .main-nav { order:3; width:100%; justify-content:center; } #contact-form .form-field, #contact-form button, #contact-form .form-intro { display:none; } .hero, .page-hero { padding-top:11rem; }</style></noscript><link href="https://kidex.mk/mk/services.html" rel="canonical"><link href="https://kidex.mk/services.html" hreflang="en" rel="alternate"><link href="https://kidex.mk/mk/services.html" hreflang="mk" rel="alternate"><link href="https://kidex.mk/services.html" hreflang="x-default" rel="alternate"><meta content="mk_MK" property="og:locale"><meta content="en_GB" property="og:locale:alternate"></head>
-<body class="page-services"><a class="skip-link" href="#main">Прескокни до содржината</a>
-<svg aria-hidden="true" height="0" style="position:absolute" width="0">
-<symbol id="icon-sprig" viewBox="0 0 24 24"><path d="M12 22V3m0 6C7 9 5 6 5 3c4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0-7c5 0 7-3 7-6-4 0-7 3-7 6Zm0 5c5 0 7-3 7-6-4 0-7 3-7 6Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.3"></path></symbol>
-<symbol id="icon-arrow" viewBox="0 0 16 16">
-<path d="M1 8h13.5M9 2.5 15 8l-6 5.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</symbol>
-<symbol id="feature-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-6 10a1.4 1.4 0 0 0 1.2 2h13.6a1.4 1.4 0 0 0 1.2-2L14 9V3M7 15h10"/><path d="M10 18h.01M14 17h.01"/></symbol>
-<symbol id="feature-sliders" viewBox="0 0 24 24"><path d="M4 7h6m4 0h6M4 17h10m4 0h2"/><circle cx="12" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></symbol>
-<symbol id="feature-leaf" viewBox="0 0 24 24"><path d="M20 4C9 2 3 7 4 14c1 6 9 8 13 2 2-3 3-7 3-12ZM4 21 15 10"/></symbol>
-<symbol id="feature-equipment" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M7 6V3h10v3M3 13h18M8 10h.01M12 10h.01M16 10h.01M8 17h8"/></symbol>
-<symbol id="feature-wheat" viewBox="0 0 24 24"><path d="M12 22V3M12 8C8 8 6 6 6 3c4 0 6 2 6 5ZM12 13c-4 0-6-2-6-5 4 0 6 2 6 5ZM12 18c-4 0-6-2-6-5 4 0 6 2 6 5ZM12 10c4 0 6-2 6-5-4 0-6 2-6 5ZM12 15c4 0 6-2 6-5-4 0-6 2-6 5Z"/></symbol>
-<symbol id="feature-pasta" viewBox="0 0 24 24"><path d="M4 5c3-3 5 3 8 0s5 3 8 0M4 12c3-3 5 3 8 0s5 3 8 0M4 19c3-3 5 3 8 0s5 3 8 0"/></symbol>
-<symbol id="feature-oven" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18M7 5.5h.01M11 5.5h.01M16 5.5h2"/><rect x="7" y="11" width="10" height="7" rx="1"/></symbol>
-<symbol id="feature-molecule" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.5"/><circle cx="18" cy="4" r="2.5"/><circle cx="12" cy="13" r="3"/><circle cx="18" cy="20" r="2.5"/><path d="m7 8 3 3m4-1 3-4m-3 9 2 3"/></symbol>
-<symbol id="feature-idea" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 2H9s0-1-1-2Z"/></symbol>
-<symbol id="feature-launch" viewBox="0 0 24 24"><path d="M12 16 8 12c2-5 6-8 12-8 0 6-3 10-8 12ZM8 12H4l3-5 6-1M12 16v4l5-3 1-6M7 17l-3 3"/><circle cx="15.5" cy="8.5" r="1.5"/></symbol>
-<symbol id="feature-clipboard" viewBox="0 0 24 24"><path d="M8 5H5v16h14V5h-3"/><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 11h8M8 15h5M8 18h6"/></symbol>
-<symbol id="feature-education" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9ZM6 11v6c4 3 8 3 12 0v-6M22 9v7"/></symbol>
-<symbol id="feature-gauge" viewBox="0 0 24 24"><path d="M4 19a10 10 0 1 1 16 0H4ZM12 12l4-4M5 12h1M12 5v1M18 12h1"/><circle cx="12" cy="12" r="1"/></symbol>
-<symbol id="feature-scan" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5M7 12h2l2-5 3 10 2-5h1"/></symbol>
-<symbol id="feature-analysis" viewBox="0 0 24 24"><path d="M4 3v18h17M8 17v-4M12 17V9M16 17V6M20 17v-6"/></symbol>
-<symbol id="feature-consult" viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4V4ZM8 8h8M8 12h5"/></symbol>
+    <!-- Document metadata: encoding, viewport, search snippets and social previews. -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Услуги — KIDEX | Иновации, консалтинг и решенија</title>
+    <meta content="Консалтинг, развој на производи и ИТ решенија од KIDEX за производители на храна и современи бизниси." name="description">
+    <meta content="#293333" name="theme-color">
+    <meta content="website" property="og:type">
+    <meta content="KIDEX" property="og:site_name">
+    <meta content="Услуги — KIDEX" property="og:title">
+    <meta content="KIDEX консалтинг, развој на производи и ИТ решенија." property="og:description">
+    <meta content="https://kidex.mk/images/kidex-logo-horizontal.png" property="og:image">
+    <meta content="https://kidex.mk/mk/services.html" property="og:url">
+    <link href="../favicon/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="../favicon/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="../favicon/favicon-180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="../favicon/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="../css/style.css?v=42" rel="stylesheet">
+    <!-- No-JavaScript fallback keeps navigation visible and offers direct contact links. -->
+    <noscript><style>.hamburger { display:none !important; } .main-nav { display:flex !important; flex-wrap:wrap; gap:.8rem; } .site-header .container { display:flex; flex-wrap:wrap; padding-block:.75rem; } .main-nav { order:3; width:100%; justify-content:center; } #contact-form .form-field, #contact-form button, #contact-form .form-intro { display:none; } .hero, .page-hero { padding-top:11rem; }</style></noscript><link href="https://kidex.mk/mk/services.html" rel="canonical"><link href="https://kidex.mk/services.html" hreflang="en" rel="alternate"><link href="https://kidex.mk/mk/services.html" hreflang="mk" rel="alternate"><link href="https://kidex.mk/services.html" hreflang="x-default" rel="alternate"><meta content="mk_MK" property="og:locale"><meta content="en_GB" property="og:locale:alternate"></head>
+  <body class="page-services"><a class="skip-link" href="#main">Прескокни до содржината</a>
+    <!-- Reusable SVG symbols: use href="#icon-name" references these local, decorative icons. -->
+    <svg aria-hidden="true" height="0" style="position:absolute" width="0">
+      <symbol id="icon-sprig" viewBox="0 0 24 24"><path d="M12 22V3m0 6C7 9 5 6 5 3c4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0-7c5 0 7-3 7-6-4 0-7 3-7 6Zm0 5c5 0 7-3 7-6-4 0-7 3-7 6Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.3"></path></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 16 16">
+        <path d="M1 8h13.5M9 2.5 15 8l-6 5.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+      </symbol>
+      <symbol id="feature-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-6 10a1.4 1.4 0 0 0 1.2 2h13.6a1.4 1.4 0 0 0 1.2-2L14 9V3M7 15h10"/><path d="M10 18h.01M14 17h.01"/></symbol>
+      <symbol id="feature-sliders" viewBox="0 0 24 24"><path d="M4 7h6m4 0h6M4 17h10m4 0h2"/><circle cx="12" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></symbol>
+      <symbol id="feature-leaf" viewBox="0 0 24 24"><path d="M20 4C9 2 3 7 4 14c1 6 9 8 13 2 2-3 3-7 3-12ZM4 21 15 10"/></symbol>
+      <symbol id="feature-equipment" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M7 6V3h10v3M3 13h18M8 10h.01M12 10h.01M16 10h.01M8 17h8"/></symbol>
+      <symbol id="feature-wheat" viewBox="0 0 24 24"><path d="M12 22V3M12 8C8 8 6 6 6 3c4 0 6 2 6 5ZM12 13c-4 0-6-2-6-5 4 0 6 2 6 5ZM12 18c-4 0-6-2-6-5 4 0 6 2 6 5ZM12 10c4 0 6-2 6-5-4 0-6 2-6 5ZM12 15c4 0 6-2 6-5-4 0-6 2-6 5Z"/></symbol>
+      <symbol id="feature-pasta" viewBox="0 0 24 24"><path d="M4 5c3-3 5 3 8 0s5 3 8 0M4 12c3-3 5 3 8 0s5 3 8 0M4 19c3-3 5 3 8 0s5 3 8 0"/></symbol>
+      <symbol id="feature-oven" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18M7 5.5h.01M11 5.5h.01M16 5.5h2"/><rect x="7" y="11" width="10" height="7" rx="1"/></symbol>
+      <symbol id="feature-molecule" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.5"/><circle cx="18" cy="4" r="2.5"/><circle cx="12" cy="13" r="3"/><circle cx="18" cy="20" r="2.5"/><path d="m7 8 3 3m4-1 3-4m-3 9 2 3"/></symbol>
+      <symbol id="feature-idea" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 2H9s0-1-1-2Z"/></symbol>
+      <symbol id="feature-launch" viewBox="0 0 24 24"><path d="M12 16 8 12c2-5 6-8 12-8 0 6-3 10-8 12ZM8 12H4l3-5 6-1M12 16v4l5-3 1-6M7 17l-3 3"/><circle cx="15.5" cy="8.5" r="1.5"/></symbol>
+      <symbol id="feature-clipboard" viewBox="0 0 24 24"><path d="M8 5H5v16h14V5h-3"/><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 11h8M8 15h5M8 18h6"/></symbol>
+      <symbol id="feature-education" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9ZM6 11v6c4 3 8 3 12 0v-6M22 9v7"/></symbol>
+      <symbol id="feature-gauge" viewBox="0 0 24 24"><path d="M4 19a10 10 0 1 1 16 0H4ZM12 12l4-4M5 12h1M12 5v1M18 12h1"/><circle cx="12" cy="12" r="1"/></symbol>
+      <symbol id="feature-scan" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5M7 12h2l2-5 3 10 2-5h1"/></symbol>
+      <symbol id="feature-analysis" viewBox="0 0 24 24"><path d="M4 3v18h17M8 17v-4M12 17V9M16 17V6M20 17v-6"/></symbol>
+      <symbol id="feature-consult" viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4V4ZM8 8h8M8 12h5"/></symbol>
 
-<symbol id="feature-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11M6 6.5h.01M9 6.5h.01"/></symbol>
-<symbol id="feature-devices" viewBox="0 0 24 24"><path d="M12 17H3V4h17v5M8 17v4M5 21h6"/><rect x="14" y="10" width="7" height="11" rx="1.5"/><path d="M17 18h1"/></symbol>
-<symbol id="feature-qr" viewBox="0 0 24 24"><path d="M7 3H3v4M17 3h4v4M3 17v4h4M21 17v4h-4"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></symbol>
-<symbol id="feature-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3M14 15h3"/></symbol>
-<symbol id="feature-review" viewBox="0 0 24 24"><path d="M4 3h16v14H9l-5 4V3Z"/><path d="m12 6 1.2 2.4 2.7.4-2 1.9.5 2.7-2.4-1.3-2.4 1.3.5-2.7-2-1.9 2.7-.4L12 6Z"/></symbol>
-</svg>
-<header class="site-header" id="site-header">
-<div class="container">
-<button aria-controls="mobile-panel" aria-expanded="false" aria-label="Отвори мени" class="hamburger" type="button">
-<span></span><span></span><span></span>
-</button>
-<a aria-label="KIDEX почетна" class="brand" href="index.html">
-<img alt="KIDEX — Иновации, консалтинг, решенија" height="210" src="../images/kidex-logo-nav.png" width="560">
-</a>
-<nav aria-label="Главна навигација" class="main-nav">
-<a href="index.html">Почетна</a>
-<a href="about.html">За нас</a>
-<a aria-current="page" href="services.html">Услуги</a>
-<a href="contact.html">Контакт</a>
-</nav>
-<div class="nav-actions">
-<nav aria-label="Јазик" class="language-switch"><a aria-label="English" href="../services.html" hreflang="en" lang="en">EN</a><a aria-current="true" aria-label="Македонски" href="services.html" hreflang="mk" lang="mk">МК</a>
-</nav>
-<a class="btn btn-primary desktop-only" href="contact.html">Разговарајте со нас <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+      <symbol id="feature-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11M6 6.5h.01M9 6.5h.01"/></symbol>
+      <symbol id="feature-devices" viewBox="0 0 24 24"><path d="M12 17H3V4h17v5M8 17v4M5 21h6"/><rect x="14" y="10" width="7" height="11" rx="1.5"/><path d="M17 18h1"/></symbol>
+      <symbol id="feature-qr" viewBox="0 0 24 24"><path d="M7 3H3v4M17 3h4v4M3 17v4h4M21 17v4h-4"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></symbol>
+      <symbol id="feature-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3M14 15h3"/></symbol>
+      <symbol id="feature-review" viewBox="0 0 24 24"><path d="M4 3h16v14H9l-5 4V3Z"/><path d="m12 6 1.2 2.4 2.7.4-2 1.9.5 2.7-2.4-1.3-2.4 1.3.5-2.7-2-1.9 2.7-.4L12 6Z"/></symbol>
+    </svg>
+    <!-- Shared fixed header. JS adds nav-ready only after mobile controls are wired. -->
+    <header class="site-header" id="site-header">
+      <div class="container">
+        <button aria-controls="mobile-panel" aria-expanded="false" aria-label="Отвори мени" class="hamburger" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a aria-label="KIDEX почетна" class="brand" href="index.html">
+          <img alt="KIDEX — Иновации, консалтинг, решенија" height="210" src="../images/kidex-logo-nav.png" width="560">
+        </a>
+        <nav aria-label="Главна навигација" class="main-nav">
+          <a href="index.html">Почетна</a>
+          <a href="about.html">За нас</a>
+          <a aria-current="page" href="services.html">Услуги</a>
+          <a href="contact.html">Контакт</a>
+        </nav>
+        <div class="nav-actions">
+          <!-- Real language links work without JS; enhancement adds the compact mobile dropdown. -->
+          <nav aria-label="Јазик" class="language-switch"><button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="Изберете јазик" hidden><span data-language-current></span><svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="language-options" id="language-options"><a aria-label="English" href="../services.html" hreflang="en" lang="en"><svg class="language-flag" aria-hidden="true" focusable="false" viewBox="0 0 60 30"><path fill="#243b73" d="M0 0h60v30H0z"></path><path d="m0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"></path><path fill="#c63545" d="M0 0h4l26 13v2ZM60 0v2L34 15h-4ZM60 30h-4L30 17v-2ZM0 30v-2l26-13h4Z"></path><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"></path><path d="M30 0v30M0 15h60" stroke="#c63545" stroke-width="6"></path></svg><span class="language-code">EN</span></a><a aria-current="true" aria-label="Македонски" href="services.html" hreflang="mk" lang="mk"><svg class="language-flag" aria-hidden="true" focusable="false" viewBox="0 0 60 30"><path fill="#ce2028" d="M0 0h60v30H0z"></path><path fill="#ffdf00" d="M24 0h12L30 15ZM54 0h6v6L30 15ZM60 11v8L30 15ZM60 24v6h-6L30 15ZM36 30H24l6-15ZM6 30H0v-6l30-9ZM0 19v-8l30 4ZM0 6V0h6l24 15Z"></path><circle cx="30" cy="15" r="6" fill="#ffdf00" stroke="#ce2028" stroke-width="1.5"></circle></svg><span class="language-code">MK</span></a>
+          </div></nav>
+          <a class="btn btn-primary desktop-only" href="contact.html">Разговарајте со нас <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
 
-</div>
-</div>
-</header>
-<div class="mobile-panel" id="mobile-panel" inert="">
-<nav aria-label="Мобилна навигација">
-<a href="index.html">Почетна</a>
-<a href="about.html">За нас</a>
-<a aria-current="page" href="services.html">Услуги</a>
-<a href="contact.html">Контакт</a>
-</nav>
-<a class="btn btn-outline" href="contact.html">Разговарајте со нас <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
-</div>
-<main id="main" tabindex="-1">
-<section class="page-hero">
-<div class="container">
-<nav aria-label="Патека" class="breadcrumb"><a href="index.html">Почетна</a> / Услуги</nav>
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Услуги</span>
-<h1>Консалтинг за прехранбена технологија и дигитални решенија.</h1>
-<p>KIDEX нуди специјализирани консултантски услуги за целокупната технологија на преработка на пченица и производство на брашно, пекарски и кондиторски производи и тестенини.</p>
-<nav aria-label="Истражете ги услугите" class="service-jump"><a href="#optimization">Оптимизација на производи</a><a href="#development">Развој на нови производи</a><a href="#laboratory-equipment">Лабораториска опрема</a><a href="#it-solutions">ИТ решенија</a>
-</nav>
-</div>
-</section>
-<section class="on-light">
-<div class="container">
-<div class="section-head wide reveal">
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Што работиме</span>
-<h2>Практичен консалтинг за технологиите зад секојдневната храна.</h2>
-<p>Со 25 години искуство, KIDEX работи во преработката на пченица и производството на брашно, пекарски и кондиторски производи и тестенини, помагајќи им на производителите да ги претворат искуството и иновациите во успешни проекти.</p>
-</div>
-<div class="service-row service-detail reveal" id="optimization">
-<div class="service-overview">
-<div class="service-heading">
-<div class="service-index">01</div>
-<div class="service-title">
-<h3>Оптимизација на леб и брашно</h3>
-<span class="tag">Подобрете го она што веќе функционира</span>
-</div>
-</div>
-<figure class="service-photo"><img src="../images/bread-evaluation.webp" srcset="../images/bread-evaluation-600.webp 600w, ../images/bread-evaluation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Раце што држат две половини леб за да се види неговата средина" width="1200" height="800" loading="lazy" decoding="async"></figure>
-</div>
-<div class="service-desc">
-<p>Прецизно приспособување на состојките, процесите и рецептурите за висок квалитет, вкус и хранлива вредност на готовите пекарски производи, со зачувување на она што веќе функционира.</p>
-<ul role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Анализа на состојките и формулацијата</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Приспособување на процесот на постојната линија</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-leaf"></use></svg><span>Подобрување на квалитетот, вкусот и хранливата вредност</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Технологија, опрема и контрола на квалитетот во мелничарство, пекарство, кондиторство и производство на тестенини</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-wheat"></use></svg><span>Мелничарска технологија: квалитет на пченицата, чистење и кондиционирање, мелнички валци, мелнички дијаграми, пакување и означување на брашно</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-pasta"></use></svg><span>Технологија на тестенини: суровини, мешање, сушење, пакување и означување</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-oven"></use></svg><span>Пекарска технологија: суровини, мешање, ферментација, печење, ладење, замрзнување, пакување и означување</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Употреба на ензими и адитиви во мелничарски, пекарски и кондиторски производи и тестенини</span></li>
-</ul>
-<a class="service-link" href="contact.html">Разговарајте за вашиот проект <span aria-hidden="true">↗</span></a>
-</div>
-</div>
-<div class="service-row service-detail reveal" id="development">
-<div class="service-overview">
-<div class="service-heading">
-<div class="service-index">02</div>
-<div class="service-title">
-<h3>Развој на нови производи</h3>
-<span class="tag">Создадете го следниот производ</span>
-</div>
-</div>
-<figure class="service-photo"><img src="../images/dough-preparation.webp" srcset="../images/dough-preparation-600.webp 600w, ../images/dough-preparation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Пекар што меси тесто на работна маса посипана со брашно" width="1200" height="800" loading="lazy" decoding="async"></figure>
-</div>
-<div class="service-desc">
-<p>Создавање и лансирање нови производи според побарувачката на пазарот и потребите на потрошувачите — од почетен концепт до формулација подготвена за производство и лансирање.</p>
-<ul role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-idea"></use></svg><span>Развој на концепт според реалната побарувачка</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Осмислување рецептури и формулации</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg><span>Поддршка до производство и лансирање</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Развој на приспособени ензимски комплекси за мелничарство, пекарски подобрувачи, премикси и концентрати, подобрувачи за тестенини и коректори за кондиторско брашно</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-clipboard"></use></svg><span>Спецификации на производи, пресметки на производни трошоци и хранливи вредности</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-education"></use></svg><span>Стручна обука за технолози и вработени во мелничарство, пекарство, кондиторство и производство на тестенини и подобрувачи</span></li>
-</ul>
-<a class="service-link" href="contact.html">Разговарајте за вашиот проект <span aria-hidden="true">↗</span></a>
-</div>
-</div>
-<div class="service-row service-detail reveal" id="laboratory-equipment">
-<div class="service-overview">
-<div class="service-heading">
-<div class="service-index">03</div>
-<div class="service-title">
-<h3>Лабораториска опрема</h3>
-<span class="tag">Мерете со сигурност</span>
-</div>
-</div>
-<figure class="service-photo"><img src="../images/laboratory-measurement.webp" srcset="../images/laboratory-measurement-600.webp 600w, ../images/laboratory-measurement.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Техничар со ракавици што користи аналитичка лабораториска вага" width="1200" height="800" loading="lazy" decoding="async"></figure>
-</div>
-<div class="service-desc">
-<p>KIDEX има стручни компетенции и технички вештини за користење лабораториска опрема за контрола на квалитетот на пченица, брашно, пекарски и кондиторски производи и тестенини.</p>
-<ul role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Контрола на квалитетот со опрема од KPM Analytics, вклучувајќи Chopin Mixolab, Alveograph и SD Matic</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Опрема од Brabender и Promylograph, вклучувајќи Farinograph, Extensograph и Amilograph</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-scan"></use></svg><span>NIR анализатори од Chopin, Foss, Perten и KPM Analytics / Unity Scientific</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg><span>Стручна анализа на лабораториски резултати</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-consult"></use></svg><span>Советување при избор на лабораториска опрема за пченица, брашно, пекарски и кондиторски производи и тестенини</span></li>
-</ul>
-<a class="service-link" href="contact.html">Разговарајте за вашиот проект <span aria-hidden="true">↗</span></a>
-</div>
-</div>
-</div>
-</section>
-<section class="engagement on-dark" aria-labelledby="engagement-title">
-<div class="container">
-<div class="engagement-heading reveal">
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Тек на соработката</span>
-<h2 id="engagement-title">Од првиот увид до производството.</h2>
-</div>
-<ol class="engagement-steps reveal" role="list">
-<li class="engagement-step">
-<div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg></div>
-<div class="engagement-copy">
-<div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">01</span><h3>Проценка</h3></div>
-<p>Откријте ги можностите во вашиот производ, процес или пазар.</p>
-</div>
-</li>
-<li class="engagement-step">
-<div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg></div>
-<div class="engagement-copy">
-<div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">02</span><h3>Заеднички развој</h3></div>
-<p>Ги подобруваме состојките, рецептурите и процесите заедно со вашиот тим.</p>
-</div>
-</li>
-<li class="engagement-step">
-<div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg></div>
-<div class="engagement-copy">
-<div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">03</span><h3>Примена во производството</h3></div>
-<p>Практично решение што вашиот тим може да го примени во производството.</p>
-</div>
-</li>
-</ol>
-</div>
-</section>
-<section class="support-photo-band on-light">
-<div class="container support-photo-grid">
-<div class="support-photo-copy reveal">
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Создадено за производството</span>
-<h2>Идеите се вредни кога функционираат во производството.</h2>
-<p>Секоја соработка со KIDEX поврзува силен концепт со резултат што тимот може да го повтори, измери и подобри.</p>
-</div>
+        </div>
+      </div>
+    </header>
+    <!-- Closed drawer is inert: hidden links cannot receive keyboard focus. -->
+    <div class="mobile-panel" id="mobile-panel" inert="">
+      <nav aria-label="Мобилна навигација">
+        <a href="index.html">Почетна</a>
+        <a href="about.html">За нас</a>
+        <a aria-current="page" href="services.html">Услуги</a>
+        <a href="contact.html">Контакт</a>
+      </nav>
+      <a class="btn btn-outline" href="contact.html">Разговарајте со нас <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+    </div>
+    <!-- Main content is the skip-link target; its tabindex supports programmatic focus. -->
+    <main id="main" tabindex="-1">
+      <!-- Section: Better products. Smarter business. -->
+      <section class="page-hero services-hero" aria-labelledby="services-hero-title">
+        <img class="services-hero-photo" src="../images/bread-evaluation.webp" alt="" aria-hidden="true" width="1200" height="800" fetchpriority="high" decoding="async">
+        <div class="container">
+          <nav aria-label="Патека" class="breadcrumb"><a href="index.html">Почетна</a><span aria-hidden="true">/</span><span aria-current="page">Услуги</span></nav>
+          <div class="services-hero-copy">
+            <span class="eyebrow">Услуги</span>
+            <h1 id="services-hero-title">Подобри производи. <em>Попаметен бизнис.</em></h1>
+            <p>Експертиза во прехранбената технологија и дигитални решенија. Изберете ја поддршката за вашиот следен чекор.</p>
+          </div>
+          <nav aria-label="Истражете ги услугите" class="service-jump service-jump-tiles">
+            <a href="#optimization"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Оптимизација на производи</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#development"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-idea"></use></svg><span>Развој на нови производи</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#laboratory-equipment"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Лабораториска опрема</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#it-solutions"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-devices"></use></svg><span>ИТ решенија</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          </nav>
+        </div>
+      </section>
+      <!-- Section: Practical consulting for the technologies behind everyday food. -->
+      <section class="on-light">
+        <div class="container">
+          <div class="section-head wide reveal">
+            <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Што работиме</span>
+            <h2>Практичен консалтинг за технологиите зад секојдневната храна.</h2>
+            <p>Со 25 години искуство, KIDEX работи во преработката на пченица и производството на брашно, пекарски и кондиторски производи и тестенини, помагајќи им на производителите да ги претворат искуството и иновациите во успешни проекти.</p>
+          </div>
+          <!-- Service detail: optimization. Preserve this ID for jump links and cross-language anchors. -->
+          <div class="service-row service-detail reveal" id="optimization">
+            <div class="service-overview">
+              <div class="service-heading">
+                <svg class="service-heading-icon" aria-hidden="true" focusable="false" width="32" height="32"><use href="#feature-sliders"></use></svg>
+                <div class="service-title">
+                  <h3>Оптимизација на леб и брашно</h3>
+                  <span class="tag">Подобрете го она што веќе функционира</span>
+                </div>
+              </div>
+              <figure class="service-photo"><img src="../images/bread-evaluation.webp" srcset="../images/bread-evaluation-600.webp 600w, ../images/bread-evaluation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Раце што држат две половини леб за да се види неговата средина" width="1200" height="800" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="service-desc">
+              <p>Прецизно приспособување на состојките, процесите и рецептурите за висок квалитет, вкус и хранлива вредност на готовите пекарски производи, со зачувување на она што веќе функционира.</p>
+              <ul role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Анализа на состојките и формулацијата</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Приспособување на процесот на постојната линија</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-leaf"></use></svg><span>Подобрување на квалитетот, вкусот и хранливата вредност</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Технологија, опрема и контрола на квалитетот во мелничарство, пекарство, кондиторство и производство на тестенини</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-wheat"></use></svg><span>Мелничарска технологија: квалитет на пченицата, чистење и кондиционирање, мелнички валци, мелнички дијаграми, пакување и означување на брашно</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-pasta"></use></svg><span>Технологија на тестенини: суровини, мешање, сушење, пакување и означување</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-oven"></use></svg><span>Пекарска технологија: суровини, мешање, ферментација, печење, ладење, замрзнување, пакување и означување</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Употреба на ензими и адитиви во мелничарски, пекарски и кондиторски производи и тестенини</span></li>
+              </ul>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Разговарајте за подобрување на производот</span></a>
+            </div>
+          </div>
+          <!-- Service detail: development. Preserve this ID for jump links and cross-language anchors. -->
+          <div class="service-row service-detail reveal" id="development">
+            <div class="service-overview">
+              <div class="service-heading">
+                <svg class="service-heading-icon" aria-hidden="true" focusable="false" width="32" height="32"><use href="#feature-idea"></use></svg>
+                <div class="service-title">
+                  <h3>Развој на нови производи</h3>
+                  <span class="tag">Создадете го следниот производ</span>
+                </div>
+              </div>
+              <figure class="service-photo"><img src="../images/dough-preparation.webp" srcset="../images/dough-preparation-600.webp 600w, ../images/dough-preparation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Пекар што меси тесто на работна маса посипана со брашно" width="1200" height="800" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="service-desc">
+              <p>Создавање и лансирање нови производи според побарувачката на пазарот и потребите на потрошувачите — од почетен концепт до формулација подготвена за производство и лансирање.</p>
+              <ul role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-idea"></use></svg><span>Развој на концепт според реалната побарувачка</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Осмислување рецептури и формулации</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg><span>Поддршка до производство и лансирање</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Развој на приспособени ензимски комплекси за мелничарство, пекарски подобрувачи, премикси и концентрати, подобрувачи за тестенини и коректори за кондиторско брашно</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-clipboard"></use></svg><span>Спецификации на производи, пресметки на производни трошоци и хранливи вредности</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-education"></use></svg><span>Стручна обука за технолози и вработени во мелничарство, пекарство, кондиторство и производство на тестенини и подобрувачи</span></li>
+              </ul>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Разговарајте за нов производ</span></a>
+            </div>
+          </div>
+          <!-- Service detail: laboratory-equipment. Preserve this ID for jump links and cross-language anchors. -->
+          <div class="service-row service-detail reveal" id="laboratory-equipment">
+            <div class="service-overview">
+              <div class="service-heading">
+                <svg class="service-heading-icon" aria-hidden="true" focusable="false" width="32" height="32"><use href="#feature-flask"></use></svg>
+                <div class="service-title">
+                  <h3>Лабораториска опрема</h3>
+                  <span class="tag">Мерете со сигурност</span>
+                </div>
+              </div>
+              <figure class="service-photo"><img src="../images/laboratory-measurement.webp" srcset="../images/laboratory-measurement-600.webp 600w, ../images/laboratory-measurement.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Техничар со ракавици што користи аналитичка лабораториска вага" width="1200" height="800" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="service-desc">
+              <p>KIDEX има стручни компетенции и технички вештини за користење лабораториска опрема за контрола на квалитетот на пченица, брашно, пекарски и кондиторски производи и тестенини.</p>
+              <ul role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Контрола на квалитетот со опрема од KPM Analytics, вклучувајќи Chopin Mixolab, Alveograph и SD Matic</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Опрема од Brabender и Promylograph, вклучувајќи Farinograph, Extensograph и Amilograph</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-scan"></use></svg><span>NIR анализатори од Chopin, Foss, Perten и KPM Analytics / Unity Scientific</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg><span>Стручна анализа на лабораториски резултати</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-consult"></use></svg><span>Советување при избор на лабораториска опрема за пченица, брашно, пекарски и кондиторски производи и тестенини</span></li>
+              </ul>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Советувајте се за опрема</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: From first look to production. -->
+      <section class="engagement on-dark" aria-labelledby="engagement-title">
+        <div class="container">
+          <div class="engagement-heading reveal">
+            <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Тек на соработката</span>
+            <h2 id="engagement-title">Од првиот увид до производството.</h2>
+          </div>
+          <ol class="engagement-steps reveal" role="list">
+            <li class="engagement-step">
+              <div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg></div>
+              <div class="engagement-copy">
+                <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">01</span><h3>Проценка</h3></div>
+                <p>Откријте ги можностите во вашиот производ, процес или пазар.</p>
+              </div>
+            </li>
+            <li class="engagement-step">
+              <div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg></div>
+              <div class="engagement-copy">
+                <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">02</span><h3>Заеднички развој</h3></div>
+                <p>Ги подобруваме состојките, рецептурите и процесите заедно со вашиот тим.</p>
+              </div>
+            </li>
+            <li class="engagement-step">
+              <div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg></div>
+              <div class="engagement-copy">
+                <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">03</span><h3>Примена во производството</h3></div>
+                <p>Практично решение што вашиот тим може да го примени во производството.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <!-- Section: Ideas matter when they work in production. -->
+      <section class="support-photo-band on-light">
+        <div class="container support-photo-grid">
+          <div class="support-photo-copy reveal">
+            <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Создадено за производството</span>
+            <h2>Идеите се вредни кога функционираат во производството.</h2>
+            <p>Секоја соработка со KIDEX поврзува силен концепт со резултат што тимот може да го повтори, измери и подобри.</p>
+          </div>
 
-<figure class="support-photo reveal">
-<img alt="Свежи лебови со семки и пченица на темна пекарска површина" decoding="async" height="798" loading="lazy" src="../images/bakery-process.webp" width="1200">
-</figure>
-</div>
-</section>
-<section class="it-solutions on-dark" id="it-solutions">
-<div class="container">
-<div class="section-head wide reveal">
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="m9 7-3 3 3 3m6-6 3 3-3 3M12 17v4m-4 0h8"></path></svg>ИТ решенија</span>
-<h2>Од прехранбена технологија до современи деловни решенија.</h2>
-<p>KIDEX ги проширува своите консултантски услуги со дигитални решенија што им помагаат на бизнисите подобро да се претстават, полесно да бидат пронајдени и подобро да ги поддржат клиентите.</p>
-</div>
-<div class="it-grid">
-<article class="it-card reveal">
-<div class="it-card-top"><span class="it-number">01</span><span class="it-label">Веб-присуство</span>
-</div>
-<h3>Изработка на веб-страници</h3>
-<p>Современи, приспособливи и професионални веб-страници што му даваат на вашиот бизнис јасно и веродостојно онлајн присуство.</p>
-<div aria-hidden="true" class="it-visual browser-visual">
-<div class="browser-bar"><i></i><i></i><i></i><span></span>
-</div>
-<div class="browser-content"><b></b><b></b><b></b><em></em>
-</div>
-</div>
-<ul class="it-list" role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-layout"></use></svg><span>Современ дизајн и корисничко искуство</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-devices"></use></svg><span>Дизајн за сите уреди</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Фокус на брзината</span></li>
-</ul>
-</article>
-<article class="it-card reveal">
-<div class="it-card-top"><span class="it-number">02</span><span class="it-label">Рецензии, поедноставено</span>
-</div>
-<h3>QR + NFC картички за Google рецензии</h3>
-<p>Физички картички со кои клиентите лесно ја отвораат вашата страница за Google рецензии и го споделуваат своето искуство.</p>
-<div aria-label="Допрете NFC или скенирајте QR, отворете ја страницата за Google рецензии и оставете рецензија" class="it-visual flow-visual" role="img">
-<div class="flow-node"><strong>Допрете / скенирајте</strong><small>NFC + QR</small>
-</div><span class="flow-arrow">→</span>
-<div class="flow-node"><strong>Google</strong><small>Рецензии</small>
-</div><span class="flow-arrow">→</span>
-<div class="flow-node"><strong>Оставете</strong><small>рецензија</small>
-</div>
-</div>
-<ul class="it-list" role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-qr"></use></svg><span>Допир или скенирање за неколку секунди</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-card"></use></svg><span>Јасен дизајн со вашиот бренд</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-review"></use></svg><span>Полесно собирање рецензии</span></li>
-</ul>
-</article>
+          <figure class="support-photo reveal">
+            <img alt="Свежи лебови со семки и пченица на темна пекарска површина" decoding="async" height="798" loading="lazy" src="../images/bakery-process.webp" width="1200">
+          </figure>
+        </div>
+      </section>
+      <!-- Section: From food technology to modern business solutions. -->
+      <section class="it-solutions on-dark" id="it-solutions">
+        <div class="container">
+          <div class="section-head wide reveal">
+            <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="m9 7-3 3 3 3m6-6 3 3-3 3M12 17v4m-4 0h8"></path></svg>ИТ решенија</span>
+            <h2>Од прехранбена технологија до современи деловни решенија.</h2>
+            <p>KIDEX ги проширува своите консултантски услуги со дигитални решенија што им помагаат на бизнисите подобро да се претстават, полесно да бидат пронајдени и подобро да ги поддржат клиентите.</p>
+          </div>
+          <div class="it-grid">
+            <article class="it-card reveal">
+              <div class="it-card-top"><span class="it-number">01</span><span class="it-label">Веб-присуство</span>
+              </div>
+              <h3>Изработка на веб-страници</h3>
+              <p>Современи, приспособливи и професионални веб-страници што му даваат на вашиот бизнис јасно и веродостојно онлајн присуство.</p>
+              <div aria-hidden="true" class="it-visual browser-visual">
+                <div class="browser-bar"><i></i><i></i><i></i><span></span>
+                </div>
+                <div class="browser-content"><b></b><b></b><b></b><em></em>
+                </div>
+              </div>
+              <ul class="it-list" role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-layout"></use></svg><span>Современ дизајн и корисничко искуство</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-devices"></use></svg><span>Дизајн за сите уреди</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Фокус на брзината</span></li>
+              </ul>
+            </article>
+            <article class="it-card reveal">
+              <div class="it-card-top"><span class="it-number">02</span><span class="it-label">Рецензии, поедноставено</span>
+              </div>
+              <h3>QR + NFC картички за Google рецензии</h3>
+              <p>Физички картички со кои клиентите лесно ја отвораат вашата страница за Google рецензии и го споделуваат своето искуство.</p>
+              <div aria-label="Допрете NFC или скенирајте QR, отворете ја страницата за Google рецензии и оставете рецензија" class="it-visual flow-visual" role="img">
+                <div class="flow-node"><strong>Допрете / скенирајте</strong><small>NFC + QR</small>
+                </div><span class="flow-arrow">→</span>
+                <div class="flow-node"><strong>Google</strong><small>Рецензии</small>
+                </div><span class="flow-arrow">→</span>
+                <div class="flow-node"><strong>Оставете</strong><small>рецензија</small>
+                </div>
+              </div>
+              <ul class="it-list" role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-qr"></use></svg><span>Допир или скенирање за неколку секунди</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-card"></use></svg><span>Јасен дизајн со вашиот бренд</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-review"></use></svg><span>Полесно собирање рецензии</span></li>
+              </ul>
+            </article>
 
-</div>
-<div class="it-cta reveal">
-<p>Подготвени сте за поефикасно дигитално присуство?</p><a class="btn btn-primary" href="contact.html">Истражете ги ИТ решенијата <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
-</div>
-</div>
-</section>
-<section class="cta-band">
-<div class="container">
-<div class="cta-inner reveal">
-<div class="cta-copy"><span class="eyebrow">Вашиот следен чекор</span>
-<h2>Кажете ни која услуга одговара на вашиот проект.</h2>
-</div>
-<div class="cta-actions">
-<a class="btn btn-primary" href="contact.html">Контактирајте нè <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
-<a class="btn btn-outline-dark" href="about.html">Повеќе за KIDEX</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div class="container">
-<div class="footer-main">
-<div class="footer-brand">
-<a class="footer-logo" href="index.html" aria-label="KIDEX почетна"><img src="../images/kidex-logo-nav.png" width="560" height="210" alt="KIDEX — Иновации, консалтинг, решенија"></a>
-<p>Консалтинг за преработка на пченица и производство на брашно, пекарски и кондиторски производи и тестенини.</p>
-</div>
-<div class="footer-contact">
-<h2>Контактирајте нè</h2>
-<div class="footer-contact-card">
-<a class="footer-contact-link" href="mailto:info@kidex.mk">
-<span class="footer-contact-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
-<span class="footer-contact-copy"><span class="footer-contact-label">Пишете ни</span><span class="footer-contact-value">info@kidex.mk</span></span>
-<span class="footer-contact-arrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
-</a>
-<a class="footer-contact-link" href="tel:+38970431203">
-<span class="footer-contact-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/></svg></span>
-<span class="footer-contact-copy"><span class="footer-contact-label">Јавете ни се</span><span class="footer-contact-value">+389 70 431 203</span></span>
-<span class="footer-contact-arrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
-</a>
-</div>
-</div>
-</div>
-<div class="footer-utility">
-<nav class="footer-nav" aria-label="Навигација во подножјето">
-<a href="about.html">За KIDEX</a>
-<a href="services.html">Услуги</a>
-<a href="contact.html">Контакт</a>
-</nav>
-<nav class="footer-social" aria-label="Социјални мрежи">
-<a href="https://www.instagram.com/kidex.mk/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a>
-<a href="https://www.facebook.com/profile.php?id=100089504146564" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5A24 24 0 0 0 15 1c-3 0-5 1.9-5 5.4V9H7v4h3v8Z" fill="currentColor" stroke="none"/></svg></a>
-<a href="https://www.linkedin.com/in/toni-acoski-96036b47/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="4" height="12" rx=".5" fill="currentColor" stroke="none"/><circle cx="5" cy="4.5" r="2" fill="currentColor" stroke="none"/><path d="M11 21V9h4v1.5c1-1.5 5-2.5 6 1.5v9h-4v-7c0-2-2-2-2 0v7Z" fill="currentColor" stroke="none"/></svg></a>
-</nav>
-</div>
-<div class="footer-bottom">
-<span>© <span data-year="">2026</span> KIDEX. Сите права се задржани.</span>
-<span class="made">Северна Македонија</span>
-</div>
-</div>
-</footer>
-<script src="../js/script.js?v=6"></script>
+          </div>
+          <div class="it-cta reveal">
+            <p>Подготвени сте за поефикасно дигитално присуство?</p><a class="btn btn-primary" href="contact.html">Истражете ги ИТ решенијата <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Tell us which of these fits what you're working on. -->
+      <section class="cta-band">
+        <div class="container">
+          <div class="cta-inner reveal">
+            <div class="cta-copy"><span class="eyebrow">Вашиот следен чекор</span>
+              <h2>Кажете ни која услуга одговара на вашиот проект.</h2>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="contact.html">Контактирајте нè <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+              <a class="btn btn-outline-dark" href="about.html">Повеќе за KIDEX</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Shared footer: contact actions, navigation and social links; intentionally no logo. -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-contact">
+            <h2>Контактирајте нè</h2>
+            <!-- Email/telephone anchors open the visitor's own application. -->
+            <div class="footer-contact-card">
+              <a class="footer-contact-link" href="mailto:info@kidex.mk">
+                <span class="footer-contact-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
+                <span class="footer-contact-copy"><span class="footer-contact-label">Пишете ни</span><span class="footer-contact-value">info@kidex.mk</span></span>
+                <span class="footer-contact-arrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
+              </a>
+              <a class="footer-contact-link" href="tel:+38970431203">
+                <span class="footer-contact-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/></svg></span>
+                <span class="footer-contact-copy"><span class="footer-contact-label">Јавете ни се</span><span class="footer-contact-value">+389 70 431 203</span></span>
+                <span class="footer-contact-arrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-utility">
+          <nav class="footer-nav" aria-label="Навигација во подножјето">
+            <a href="about.html">За KIDEX</a>
+            <a href="services.html">Услуги</a>
+            <a href="contact.html">Контакт</a>
+          </nav>
+          <!-- External social links use noopener when opening a new tab. -->
+          <nav class="footer-social" aria-label="Социјални мрежи">
+            <a href="https://www.instagram.com/kidex.mk/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=100089504146564" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5A24 24 0 0 0 15 1c-3 0-5 1.9-5 5.4V9H7v4h3v8Z" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.linkedin.com/in/toni-acoski-96036b47/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="4" height="12" rx=".5" fill="currentColor" stroke="none"/><circle cx="5" cy="4.5" r="2" fill="currentColor" stroke="none"/><path d="M11 21V9h4v1.5c1-1.5 5-2.5 6 1.5v9h-4v-7c0-2-2-2-2 0v7Z" fill="currentColor" stroke="none"/></svg></a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-year="">2026</span> KIDEX. Сите права се задржани.</span>
+          <span class="made">Северна Македонија</span>
+        </div>
+      </div>
+    </footer>
+    <!-- Loaded after markup: shared JS can query components without a DOM-ready listener. -->
+    <script src="../js/script.js?v=9"></script>
 
 
 </body></html>

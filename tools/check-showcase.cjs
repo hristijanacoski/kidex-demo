@@ -24,6 +24,7 @@ const url = prefix => pathToFileURL(path.join(root, prefix, 'index.html')).href;
         await page.evaluate(() => Promise.all(Array.from(document.querySelectorAll('.showcase-slide img'), image => image.decode())));
         const tabs = page.locator('.showcase-tab');
         const slides = page.locator('.showcase-slide');
+        // Selection is more than appearance: one tab stop, one visible/focusable panel.
         async function checkSelection(index) {
           assert.equal(await page.locator('.showcase-tab[aria-selected="true"]').count(), 1);
           assert.equal(await tabs.nth(index).getAttribute('aria-selected'), 'true');

@@ -1,328 +1,353 @@
 <!DOCTYPE html>
+<!-- Maintenance: edit root HTML and translations/mk.json; tools/build.py regenerates mk/.
+Shared styles and browser behavior live in css/style.css and js/script.js. -->
 <html lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Services — KIDEX | Innovation, Consulting &amp; Solutions</title>
-<meta content="KIDEX consulting, product development and IT solutions for food producers and modern businesses." name="description">
-<meta content="#293333" name="theme-color">
-<meta content="website" property="og:type">
-<meta content="KIDEX" property="og:site_name">
-<meta content="Services — KIDEX" property="og:title">
-<meta content="KIDEX consulting, product development and IT solutions." property="og:description">
-<meta content="https://kidex.mk/images/kidex-logo-horizontal.png" property="og:image">
-<meta content="https://kidex.mk/services.html" property="og:url">
-<link href="favicon/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
-<link href="favicon/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
-<link href="favicon/favicon-180.png" rel="apple-touch-icon" sizes="180x180">
-<link href="favicon/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="css/style.css?v=26" rel="stylesheet">
-<noscript><style>.hamburger { display:none !important; } .main-nav { display:flex !important; flex-wrap:wrap; gap:.8rem; } .site-header .container { display:flex; flex-wrap:wrap; padding-block:.75rem; } .main-nav { order:3; width:100%; justify-content:center; } #contact-form .form-field, #contact-form button, #contact-form .form-intro { display:none; } .hero, .page-hero { padding-top:11rem; }</style></noscript><link href="https://kidex.mk/services.html" rel="canonical"><link href="https://kidex.mk/services.html" hreflang="en" rel="alternate"><link href="https://kidex.mk/mk/services.html" hreflang="mk" rel="alternate"><link href="https://kidex.mk/services.html" hreflang="x-default" rel="alternate"><meta content="en_GB" property="og:locale"><meta content="mk_MK" property="og:locale:alternate"></head>
-<body class="page-services"><a class="skip-link" href="#main">Skip to content</a>
-<svg aria-hidden="true" height="0" style="position:absolute" width="0">
-<symbol id="icon-sprig" viewBox="0 0 24 24"><path d="M12 22V3m0 6C7 9 5 6 5 3c4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0-7c5 0 7-3 7-6-4 0-7 3-7 6Zm0 5c5 0 7-3 7-6-4 0-7 3-7 6Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.3"></path></symbol>
-<symbol id="icon-arrow" viewBox="0 0 16 16">
-<path d="M1 8h13.5M9 2.5 15 8l-6 5.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</symbol>
-<symbol id="feature-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-6 10a1.4 1.4 0 0 0 1.2 2h13.6a1.4 1.4 0 0 0 1.2-2L14 9V3M7 15h10"/><path d="M10 18h.01M14 17h.01"/></symbol>
-<symbol id="feature-sliders" viewBox="0 0 24 24"><path d="M4 7h6m4 0h6M4 17h10m4 0h2"/><circle cx="12" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></symbol>
-<symbol id="feature-leaf" viewBox="0 0 24 24"><path d="M20 4C9 2 3 7 4 14c1 6 9 8 13 2 2-3 3-7 3-12ZM4 21 15 10"/></symbol>
-<symbol id="feature-equipment" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M7 6V3h10v3M3 13h18M8 10h.01M12 10h.01M16 10h.01M8 17h8"/></symbol>
-<symbol id="feature-wheat" viewBox="0 0 24 24"><path d="M12 22V3M12 8C8 8 6 6 6 3c4 0 6 2 6 5ZM12 13c-4 0-6-2-6-5 4 0 6 2 6 5ZM12 18c-4 0-6-2-6-5 4 0 6 2 6 5ZM12 10c4 0 6-2 6-5-4 0-6 2-6 5ZM12 15c4 0 6-2 6-5-4 0-6 2-6 5Z"/></symbol>
-<symbol id="feature-pasta" viewBox="0 0 24 24"><path d="M4 5c3-3 5 3 8 0s5 3 8 0M4 12c3-3 5 3 8 0s5 3 8 0M4 19c3-3 5 3 8 0s5 3 8 0"/></symbol>
-<symbol id="feature-oven" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18M7 5.5h.01M11 5.5h.01M16 5.5h2"/><rect x="7" y="11" width="10" height="7" rx="1"/></symbol>
-<symbol id="feature-molecule" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.5"/><circle cx="18" cy="4" r="2.5"/><circle cx="12" cy="13" r="3"/><circle cx="18" cy="20" r="2.5"/><path d="m7 8 3 3m4-1 3-4m-3 9 2 3"/></symbol>
-<symbol id="feature-idea" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 2H9s0-1-1-2Z"/></symbol>
-<symbol id="feature-launch" viewBox="0 0 24 24"><path d="M12 16 8 12c2-5 6-8 12-8 0 6-3 10-8 12ZM8 12H4l3-5 6-1M12 16v4l5-3 1-6M7 17l-3 3"/><circle cx="15.5" cy="8.5" r="1.5"/></symbol>
-<symbol id="feature-clipboard" viewBox="0 0 24 24"><path d="M8 5H5v16h14V5h-3"/><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 11h8M8 15h5M8 18h6"/></symbol>
-<symbol id="feature-education" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9ZM6 11v6c4 3 8 3 12 0v-6M22 9v7"/></symbol>
-<symbol id="feature-gauge" viewBox="0 0 24 24"><path d="M4 19a10 10 0 1 1 16 0H4ZM12 12l4-4M5 12h1M12 5v1M18 12h1"/><circle cx="12" cy="12" r="1"/></symbol>
-<symbol id="feature-scan" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5M7 12h2l2-5 3 10 2-5h1"/></symbol>
-<symbol id="feature-analysis" viewBox="0 0 24 24"><path d="M4 3v18h17M8 17v-4M12 17V9M16 17V6M20 17v-6"/></symbol>
-<symbol id="feature-consult" viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4V4ZM8 8h8M8 12h5"/></symbol>
+    <!-- Document metadata: encoding, viewport, search snippets and social previews. -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Services — KIDEX | Innovation, Consulting &amp; Solutions</title>
+    <meta content="KIDEX consulting, product development and IT solutions for food producers and modern businesses." name="description">
+    <meta content="#293333" name="theme-color">
+    <meta content="website" property="og:type">
+    <meta content="KIDEX" property="og:site_name">
+    <meta content="Services — KIDEX" property="og:title">
+    <meta content="KIDEX consulting, product development and IT solutions." property="og:description">
+    <meta content="https://kidex.mk/images/kidex-logo-horizontal.png" property="og:image">
+    <meta content="https://kidex.mk/services.html" property="og:url">
+    <link href="favicon/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="favicon/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="favicon/favicon-180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="favicon/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="css/style.css?v=42" rel="stylesheet">
+    <!-- No-JavaScript fallback keeps navigation visible and offers direct contact links. -->
+    <noscript><style>.hamburger { display:none !important; } .main-nav { display:flex !important; flex-wrap:wrap; gap:.8rem; } .site-header .container { display:flex; flex-wrap:wrap; padding-block:.75rem; } .main-nav { order:3; width:100%; justify-content:center; } #contact-form .form-field, #contact-form button, #contact-form .form-intro { display:none; } .hero, .page-hero { padding-top:11rem; }</style></noscript><link href="https://kidex.mk/services.html" rel="canonical"><link href="https://kidex.mk/services.html" hreflang="en" rel="alternate"><link href="https://kidex.mk/mk/services.html" hreflang="mk" rel="alternate"><link href="https://kidex.mk/services.html" hreflang="x-default" rel="alternate"><meta content="en_GB" property="og:locale"><meta content="mk_MK" property="og:locale:alternate"></head>
+  <body class="page-services"><a class="skip-link" href="#main">Skip to content</a>
+    <!-- Reusable SVG symbols: use href="#icon-name" references these local, decorative icons. -->
+    <svg aria-hidden="true" height="0" style="position:absolute" width="0">
+      <symbol id="icon-sprig" viewBox="0 0 24 24"><path d="M12 22V3m0 6C7 9 5 6 5 3c4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0-7c5 0 7-3 7-6-4 0-7 3-7 6Zm0 5c5 0 7-3 7-6-4 0-7 3-7 6Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.3"></path></symbol>
+      <symbol id="icon-arrow" viewBox="0 0 16 16">
+        <path d="M1 8h13.5M9 2.5 15 8l-6 5.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+      </symbol>
+      <symbol id="feature-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-6 10a1.4 1.4 0 0 0 1.2 2h13.6a1.4 1.4 0 0 0 1.2-2L14 9V3M7 15h10"/><path d="M10 18h.01M14 17h.01"/></symbol>
+      <symbol id="feature-sliders" viewBox="0 0 24 24"><path d="M4 7h6m4 0h6M4 17h10m4 0h2"/><circle cx="12" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></symbol>
+      <symbol id="feature-leaf" viewBox="0 0 24 24"><path d="M20 4C9 2 3 7 4 14c1 6 9 8 13 2 2-3 3-7 3-12ZM4 21 15 10"/></symbol>
+      <symbol id="feature-equipment" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M7 6V3h10v3M3 13h18M8 10h.01M12 10h.01M16 10h.01M8 17h8"/></symbol>
+      <symbol id="feature-wheat" viewBox="0 0 24 24"><path d="M12 22V3M12 8C8 8 6 6 6 3c4 0 6 2 6 5ZM12 13c-4 0-6-2-6-5 4 0 6 2 6 5ZM12 18c-4 0-6-2-6-5 4 0 6 2 6 5ZM12 10c4 0 6-2 6-5-4 0-6 2-6 5ZM12 15c4 0 6-2 6-5-4 0-6 2-6 5Z"/></symbol>
+      <symbol id="feature-pasta" viewBox="0 0 24 24"><path d="M4 5c3-3 5 3 8 0s5 3 8 0M4 12c3-3 5 3 8 0s5 3 8 0M4 19c3-3 5 3 8 0s5 3 8 0"/></symbol>
+      <symbol id="feature-oven" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18M7 5.5h.01M11 5.5h.01M16 5.5h2"/><rect x="7" y="11" width="10" height="7" rx="1"/></symbol>
+      <symbol id="feature-molecule" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.5"/><circle cx="18" cy="4" r="2.5"/><circle cx="12" cy="13" r="3"/><circle cx="18" cy="20" r="2.5"/><path d="m7 8 3 3m4-1 3-4m-3 9 2 3"/></symbol>
+      <symbol id="feature-idea" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 2H9s0-1-1-2Z"/></symbol>
+      <symbol id="feature-launch" viewBox="0 0 24 24"><path d="M12 16 8 12c2-5 6-8 12-8 0 6-3 10-8 12ZM8 12H4l3-5 6-1M12 16v4l5-3 1-6M7 17l-3 3"/><circle cx="15.5" cy="8.5" r="1.5"/></symbol>
+      <symbol id="feature-clipboard" viewBox="0 0 24 24"><path d="M8 5H5v16h14V5h-3"/><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 11h8M8 15h5M8 18h6"/></symbol>
+      <symbol id="feature-education" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9ZM6 11v6c4 3 8 3 12 0v-6M22 9v7"/></symbol>
+      <symbol id="feature-gauge" viewBox="0 0 24 24"><path d="M4 19a10 10 0 1 1 16 0H4ZM12 12l4-4M5 12h1M12 5v1M18 12h1"/><circle cx="12" cy="12" r="1"/></symbol>
+      <symbol id="feature-scan" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5M7 12h2l2-5 3 10 2-5h1"/></symbol>
+      <symbol id="feature-analysis" viewBox="0 0 24 24"><path d="M4 3v18h17M8 17v-4M12 17V9M16 17V6M20 17v-6"/></symbol>
+      <symbol id="feature-consult" viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4V4ZM8 8h8M8 12h5"/></symbol>
 
-<symbol id="feature-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11M6 6.5h.01M9 6.5h.01"/></symbol>
-<symbol id="feature-devices" viewBox="0 0 24 24"><path d="M12 17H3V4h17v5M8 17v4M5 21h6"/><rect x="14" y="10" width="7" height="11" rx="1.5"/><path d="M17 18h1"/></symbol>
-<symbol id="feature-qr" viewBox="0 0 24 24"><path d="M7 3H3v4M17 3h4v4M3 17v4h4M21 17v4h-4"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></symbol>
-<symbol id="feature-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3M14 15h3"/></symbol>
-<symbol id="feature-review" viewBox="0 0 24 24"><path d="M4 3h16v14H9l-5 4V3Z"/><path d="m12 6 1.2 2.4 2.7.4-2 1.9.5 2.7-2.4-1.3-2.4 1.3.5-2.7-2-1.9 2.7-.4L12 6Z"/></symbol>
-</svg>
-<header class="site-header" id="site-header">
-<div class="container">
-<button aria-controls="mobile-panel" aria-expanded="false" aria-label="Open menu" class="hamburger" type="button">
-<span></span><span></span><span></span>
-</button>
-<a aria-label="KIDEX home" class="brand" href="index.html">
-<img alt="KIDEX — Innovation, Consulting, Solutions" height="210" src="images/kidex-logo-nav.png" width="560">
-</a>
-<nav aria-label="Primary" class="main-nav">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a aria-current="page" href="services.html">Services</a>
-<a href="contact.html">Contact</a>
-</nav>
-<div class="nav-actions">
-<nav aria-label="Language" class="language-switch"><a aria-current="true" aria-label="English" href="services.html" hreflang="en" lang="en">EN</a><a aria-label="Македонски" href="mk/services.html" hreflang="mk" lang="mk">МК</a>
-</nav>
-<a class="btn btn-primary desktop-only" href="contact.html">Start a conversation <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+      <symbol id="feature-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11M6 6.5h.01M9 6.5h.01"/></symbol>
+      <symbol id="feature-devices" viewBox="0 0 24 24"><path d="M12 17H3V4h17v5M8 17v4M5 21h6"/><rect x="14" y="10" width="7" height="11" rx="1.5"/><path d="M17 18h1"/></symbol>
+      <symbol id="feature-qr" viewBox="0 0 24 24"><path d="M7 3H3v4M17 3h4v4M3 17v4h4M21 17v4h-4"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></symbol>
+      <symbol id="feature-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3M14 15h3"/></symbol>
+      <symbol id="feature-review" viewBox="0 0 24 24"><path d="M4 3h16v14H9l-5 4V3Z"/><path d="m12 6 1.2 2.4 2.7.4-2 1.9.5 2.7-2.4-1.3-2.4 1.3.5-2.7-2-1.9 2.7-.4L12 6Z"/></symbol>
+    </svg>
+    <!-- Shared fixed header. JS adds nav-ready only after mobile controls are wired. -->
+    <header class="site-header" id="site-header">
+      <div class="container">
+        <button aria-controls="mobile-panel" aria-expanded="false" aria-label="Open menu" class="hamburger" type="button">
+          <span></span><span></span><span></span>
+        </button>
+        <a aria-label="KIDEX home" class="brand" href="index.html">
+          <img alt="KIDEX — Innovation, Consulting, Solutions" height="210" src="images/kidex-logo-nav.png" width="560">
+        </a>
+        <nav aria-label="Primary" class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a aria-current="page" href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <!-- Real language links work without JS; enhancement adds the compact mobile dropdown. -->
+          <nav aria-label="Language" class="language-switch"><button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-options" aria-label="Choose language" hidden><span data-language-current></span><svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><div class="language-options" id="language-options"><a aria-current="true" aria-label="English" href="services.html" hreflang="en" lang="en"><svg class="language-flag" aria-hidden="true" focusable="false" viewBox="0 0 60 30"><path fill="#243b73" d="M0 0h60v30H0z"></path><path d="m0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"></path><path fill="#c63545" d="M0 0h4l26 13v2ZM60 0v2L34 15h-4ZM60 30h-4L30 17v-2ZM0 30v-2l26-13h4Z"></path><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"></path><path d="M30 0v30M0 15h60" stroke="#c63545" stroke-width="6"></path></svg><span class="language-code">EN</span></a><a aria-label="Македонски" href="mk/services.html" hreflang="mk" lang="mk"><svg class="language-flag" aria-hidden="true" focusable="false" viewBox="0 0 60 30"><path fill="#ce2028" d="M0 0h60v30H0z"></path><path fill="#ffdf00" d="M24 0h12L30 15ZM54 0h6v6L30 15ZM60 11v8L30 15ZM60 24v6h-6L30 15ZM36 30H24l6-15ZM6 30H0v-6l30-9ZM0 19v-8l30 4ZM0 6V0h6l24 15Z"></path><circle cx="30" cy="15" r="6" fill="#ffdf00" stroke="#ce2028" stroke-width="1.5"></circle></svg><span class="language-code">MK</span></a>
+          </div></nav>
+          <a class="btn btn-primary desktop-only" href="contact.html">Start a conversation <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
 
-</div>
-</div>
-</header>
-<div class="mobile-panel" id="mobile-panel" inert="">
-<nav aria-label="Mobile">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a aria-current="page" href="services.html">Services</a>
-<a href="contact.html">Contact</a>
-</nav>
-<a class="btn btn-outline" href="contact.html">Start a conversation <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
-</div>
-<main id="main" tabindex="-1">
-<section class="page-hero">
-<div class="container">
-<nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a> / Services</nav>
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Services</span>
-<h1>Consulting across food technology and digital solutions.</h1>
-<p>KIDEX provides consulting services specialized in the overall technology of wheat and flour processing, bakery products, confectionery and pasta technology.</p>
-<nav aria-label="Explore services" class="service-jump"><a href="#optimization">Product optimization</a><a href="#development">New product development</a><a href="#laboratory-equipment">Laboratory equipment</a><a href="#it-solutions">IT solutions</a>
-</nav>
-</div>
-</section>
-<section class="on-light">
-<div class="container">
-<div class="section-head wide reveal">
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>What we do</span>
-<h2>Practical consulting for the technologies behind everyday food.</h2>
-<p>With 25 years of experience, KIDEX works across wheat and flour production, bakery products, confectionery and pasta technology, helping producers turn experience and innovation into successful projects.</p>
-</div>
-<div class="service-row service-detail reveal" id="optimization">
-<div class="service-overview">
-<div class="service-heading">
-<div class="service-index">01</div>
-<div class="service-title">
-<h3>Bread &amp; Flour Product Optimization</h3>
-<span class="tag">Refine what's already working</span>
-</div>
-</div>
-<figure class="service-photo"><img src="images/bread-evaluation.webp" srcset="images/bread-evaluation-600.webp 600w, images/bread-evaluation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Hands holding two halves of a loaf to reveal its crumb" width="1200" height="800" loading="lazy" decoding="async"></figure>
-</div>
-<div class="service-desc">
-<p>Fine-tuning ingredients, processes and recipes to achieve the highest quality, taste and nutritional value in the final baked goods — improving a product without losing what already makes it work.</p>
-<ul role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Ingredient and formulation review</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Process fine-tuning on the existing line</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-leaf"></use></svg><span>Quality, taste and nutritional improvement</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Technology, equipment and quality control across milling, baking, confectionery and pasta products</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-wheat"></use></svg><span>Milling technology: wheat quality, cleaning and tempering, milling rolls, milling diagrams, flour packaging and labeling</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-pasta"></use></svg><span>Pasta technology: raw materials, mixing, drying, packaging and labeling</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-oven"></use></svg><span>Bakery technology: raw materials, mixing, fermentation, baking, cooling, freezing, packaging and labeling</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Use of enzymes and additives in milling, baking, confectionery and pasta products</span></li>
-</ul>
-<a class="service-link" href="contact.html">Discuss your project <span aria-hidden="true">↗</span></a>
-</div>
-</div>
-<div class="service-row service-detail reveal" id="development">
-<div class="service-overview">
-<div class="service-heading">
-<div class="service-index">02</div>
-<div class="service-title">
-<h3>New Product Development</h3>
-<span class="tag">Build what's next</span>
-</div>
-</div>
-<figure class="service-photo"><img src="images/dough-preparation.webp" srcset="images/dough-preparation-600.webp 600w, images/dough-preparation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="A baker kneading dough on a floured workbench" width="1200" height="800" loading="lazy" decoding="async"></figure>
-</div>
-<div class="service-desc">
-<p>Creating and launching new products designed to meet market demands and consumer needs — from early concept through to a formulation ready for production and launch.</p>
-<ul role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-idea"></use></svg><span>Concept development against real market demand</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Recipe and formulation design</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg><span>Support through to production and launch</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Development of tailor-made milling enzyme complexes, baking improvers, baking premixes and concentrates, pasta improvers and confectionery flour correctors</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-clipboard"></use></svg><span>Product specifications, production cost calculations and nutritional values</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-education"></use></svg><span>Professional education for technologists and employees in milling, bakery, confectionery, pasta and improver production</span></li>
-</ul>
-<a class="service-link" href="contact.html">Discuss your project <span aria-hidden="true">↗</span></a>
-</div>
-</div>
-<div class="service-row service-detail reveal" id="laboratory-equipment">
-<div class="service-overview">
-<div class="service-heading">
-<div class="service-index">03</div>
-<div class="service-title">
-<h3>Laboratory Equipment</h3>
-<span class="tag">Measure with confidence</span>
-</div>
-</div>
-<figure class="service-photo"><img src="images/laboratory-measurement.webp" srcset="images/laboratory-measurement-600.webp 600w, images/laboratory-measurement.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="A gloved technician using an analytical laboratory balance" width="1200" height="800" loading="lazy" decoding="async"></figure>
-</div>
-<div class="service-desc">
-<p>KIDEX has excellent competence and technical skills in the use of laboratory equipment for the quality control of wheat and flour, as well as bakery, confectionery and pasta products.</p>
-<ul role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Quality control with KPM Analytics equipment, including Chopin Mixolab, Alveograph and SD Matic</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Brabender and Promylograph equipment, including Farinograph, Extensograph and Amilograph</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-scan"></use></svg><span>NIR analyzers from Chopin, Foss, Perten and KPM Analytics / Unity Scientific</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg><span>Expert analysis of laboratory results</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-consult"></use></svg><span>Consulting during the selection of laboratory equipment for wheat, flour, bakery, confectionery and pasta products</span></li>
-</ul>
-<a class="service-link" href="contact.html">Discuss your project <span aria-hidden="true">↗</span></a>
-</div>
-</div>
-</div>
-</section>
-<section class="engagement on-dark" aria-labelledby="engagement-title">
-<div class="container">
-<div class="engagement-heading reveal">
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>How an engagement runs</span>
-<h2 id="engagement-title">From first look to production.</h2>
-</div>
-<ol class="engagement-steps reveal" role="list">
-<li class="engagement-step">
-<div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg></div>
-<div class="engagement-copy">
-<div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">01</span><h3>Assess</h3></div>
-<p>Find the opportunity in your product, process or market.</p>
-</div>
-</li>
-<li class="engagement-step">
-<div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg></div>
-<div class="engagement-copy">
-<div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">02</span><h3>Develop together</h3></div>
-<p>Refine ingredients, recipes and processes with your team.</p>
-</div>
-</li>
-<li class="engagement-step">
-<div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg></div>
-<div class="engagement-copy">
-<div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">03</span><h3>Put into practice</h3></div>
-<p>A practical solution your team can take into production.</p>
-</div>
-</li>
-</ol>
-</div>
-</section>
-<section class="support-photo-band on-light">
-<div class="container support-photo-grid">
-<div class="support-photo-copy reveal">
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Built for the line</span>
-<h2>Ideas matter when they work in production.</h2>
-<p>Every KIDEX engagement connects a strong concept to a result that a real team can repeat, measure and improve.</p>
-</div>
+        </div>
+      </div>
+    </header>
+    <!-- Closed drawer is inert: hidden links cannot receive keyboard focus. -->
+    <div class="mobile-panel" id="mobile-panel" inert="">
+      <nav aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a aria-current="page" href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="btn btn-outline" href="contact.html">Start a conversation <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+    </div>
+    <!-- Main content is the skip-link target; its tabindex supports programmatic focus. -->
+    <main id="main" tabindex="-1">
+      <!-- Section: Better products. Smarter business. -->
+      <section class="page-hero services-hero" aria-labelledby="services-hero-title">
+        <img class="services-hero-photo" src="images/bread-evaluation.webp" alt="" aria-hidden="true" width="1200" height="800" fetchpriority="high" decoding="async">
+        <div class="container">
+          <nav aria-label="Breadcrumb" class="breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Services</span></nav>
+          <div class="services-hero-copy">
+            <span class="eyebrow">Services</span>
+            <h1 id="services-hero-title">Better products. <em>Smarter business.</em></h1>
+            <p>Food technology expertise and digital solutions. Choose the support your next step needs.</p>
+          </div>
+          <nav aria-label="Explore services" class="service-jump service-jump-tiles">
+            <a href="#optimization"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Product optimization</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#development"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-idea"></use></svg><span>New product development</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#laboratory-equipment"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Laboratory equipment</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            <a href="#it-solutions"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-devices"></use></svg><span>IT solutions</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          </nav>
+        </div>
+      </section>
+      <!-- Section: Practical consulting for the technologies behind everyday food. -->
+      <section class="on-light">
+        <div class="container">
+          <div class="section-head wide reveal">
+            <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>What we do</span>
+            <h2>Practical consulting for the technologies behind everyday food.</h2>
+            <p>With 25 years of experience, KIDEX works across wheat and flour production, bakery products, confectionery and pasta technology, helping producers turn experience and innovation into successful projects.</p>
+          </div>
+          <!-- Service detail: optimization. Preserve this ID for jump links and cross-language anchors. -->
+          <div class="service-row service-detail reveal" id="optimization">
+            <div class="service-overview">
+              <div class="service-heading">
+                <svg class="service-heading-icon" aria-hidden="true" focusable="false" width="32" height="32"><use href="#feature-sliders"></use></svg>
+                <div class="service-title">
+                  <h3>Bread &amp; Flour Product Optimization</h3>
+                  <span class="tag">Refine what's already working</span>
+                </div>
+              </div>
+              <figure class="service-photo"><img src="images/bread-evaluation.webp" srcset="images/bread-evaluation-600.webp 600w, images/bread-evaluation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Hands holding two halves of a loaf to reveal its crumb" width="1200" height="800" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="service-desc">
+              <p>Fine-tuning ingredients, processes and recipes to achieve the highest quality, taste and nutritional value in the final baked goods — improving a product without losing what already makes it work.</p>
+              <ul role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Ingredient and formulation review</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Process fine-tuning on the existing line</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-leaf"></use></svg><span>Quality, taste and nutritional improvement</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Technology, equipment and quality control across milling, baking, confectionery and pasta products</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-wheat"></use></svg><span>Milling technology: wheat quality, cleaning and tempering, milling rolls, milling diagrams, flour packaging and labeling</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-pasta"></use></svg><span>Pasta technology: raw materials, mixing, drying, packaging and labeling</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-oven"></use></svg><span>Bakery technology: raw materials, mixing, fermentation, baking, cooling, freezing, packaging and labeling</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Use of enzymes and additives in milling, baking, confectionery and pasta products</span></li>
+              </ul>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Discuss product improvements</span></a>
+            </div>
+          </div>
+          <!-- Service detail: development. Preserve this ID for jump links and cross-language anchors. -->
+          <div class="service-row service-detail reveal" id="development">
+            <div class="service-overview">
+              <div class="service-heading">
+                <svg class="service-heading-icon" aria-hidden="true" focusable="false" width="32" height="32"><use href="#feature-idea"></use></svg>
+                <div class="service-title">
+                  <h3>New Product Development</h3>
+                  <span class="tag">Build what's next</span>
+                </div>
+              </div>
+              <figure class="service-photo"><img src="images/dough-preparation.webp" srcset="images/dough-preparation-600.webp 600w, images/dough-preparation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="A baker kneading dough on a floured workbench" width="1200" height="800" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="service-desc">
+              <p>Creating and launching new products designed to meet market demands and consumer needs — from early concept through to a formulation ready for production and launch.</p>
+              <ul role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-idea"></use></svg><span>Concept development against real market demand</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Recipe and formulation design</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg><span>Support through to production and launch</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Development of tailor-made milling enzyme complexes, baking improvers, baking premixes and concentrates, pasta improvers and confectionery flour correctors</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-clipboard"></use></svg><span>Product specifications, production cost calculations and nutritional values</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-education"></use></svg><span>Professional education for technologists and employees in milling, bakery, confectionery, pasta and improver production</span></li>
+              </ul>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Discuss a new product</span></a>
+            </div>
+          </div>
+          <!-- Service detail: laboratory-equipment. Preserve this ID for jump links and cross-language anchors. -->
+          <div class="service-row service-detail reveal" id="laboratory-equipment">
+            <div class="service-overview">
+              <div class="service-heading">
+                <svg class="service-heading-icon" aria-hidden="true" focusable="false" width="32" height="32"><use href="#feature-flask"></use></svg>
+                <div class="service-title">
+                  <h3>Laboratory Equipment</h3>
+                  <span class="tag">Measure with confidence</span>
+                </div>
+              </div>
+              <figure class="service-photo"><img src="images/laboratory-measurement.webp" srcset="images/laboratory-measurement-600.webp 600w, images/laboratory-measurement.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="A gloved technician using an analytical laboratory balance" width="1200" height="800" loading="lazy" decoding="async"></figure>
+            </div>
+            <div class="service-desc">
+              <p>KIDEX has excellent competence and technical skills in the use of laboratory equipment for the quality control of wheat and flour, as well as bakery, confectionery and pasta products.</p>
+              <ul role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Quality control with KPM Analytics equipment, including Chopin Mixolab, Alveograph and SD Matic</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Brabender and Promylograph equipment, including Farinograph, Extensograph and Amilograph</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-scan"></use></svg><span>NIR analyzers from Chopin, Foss, Perten and KPM Analytics / Unity Scientific</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg><span>Expert analysis of laboratory results</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-consult"></use></svg><span>Consulting during the selection of laboratory equipment for wheat, flour, bakery, confectionery and pasta products</span></li>
+              </ul>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Get equipment advice</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: From first look to production. -->
+      <section class="engagement on-dark" aria-labelledby="engagement-title">
+        <div class="container">
+          <div class="engagement-heading reveal">
+            <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>How an engagement runs</span>
+            <h2 id="engagement-title">From first look to production.</h2>
+          </div>
+          <ol class="engagement-steps reveal" role="list">
+            <li class="engagement-step">
+              <div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg></div>
+              <div class="engagement-copy">
+                <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">01</span><h3>Assess</h3></div>
+                <p>Find the opportunity in your product, process or market.</p>
+              </div>
+            </li>
+            <li class="engagement-step">
+              <div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg></div>
+              <div class="engagement-copy">
+                <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">02</span><h3>Develop together</h3></div>
+                <p>Refine ingredients, recipes and processes with your team.</p>
+              </div>
+            </li>
+            <li class="engagement-step">
+              <div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg></div>
+              <div class="engagement-copy">
+                <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">03</span><h3>Put into practice</h3></div>
+                <p>A practical solution your team can take into production.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <!-- Section: Ideas matter when they work in production. -->
+      <section class="support-photo-band on-light">
+        <div class="container support-photo-grid">
+          <div class="support-photo-copy reveal">
+            <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Built for the line</span>
+            <h2>Ideas matter when they work in production.</h2>
+            <p>Every KIDEX engagement connects a strong concept to a result that a real team can repeat, measure and improve.</p>
+          </div>
 
-<figure class="support-photo reveal">
-<img alt="Fresh seeded loaves with wheat on a dark bakery surface" decoding="async" height="798" loading="lazy" src="images/bakery-process.webp" width="1200">
-</figure>
-</div>
-</section>
-<section class="it-solutions on-dark" id="it-solutions">
-<div class="container">
-<div class="section-head wide reveal">
-<span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="m9 7-3 3 3 3m6-6 3 3-3 3M12 17v4m-4 0h8"></path></svg>IT Solutions</span>
-<h2>From food technology to modern business solutions.</h2>
-<p>KIDEX is expanding its consulting and solutions work into digital services that help businesses look sharper, get found faster and support customers better.</p>
-</div>
-<div class="it-grid">
-<article class="it-card reveal">
-<div class="it-card-top"><span class="it-number">01</span><span class="it-label">Web presence</span>
-</div>
-<h3>Website Development</h3>
-<p>Modern, responsive and professional websites that give your business a clear, credible online presence.</p>
-<div aria-hidden="true" class="it-visual browser-visual">
-<div class="browser-bar"><i></i><i></i><i></i><span></span>
-</div>
-<div class="browser-content"><b></b><b></b><b></b><em></em>
-</div>
-</div>
-<ul class="it-list" role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-layout"></use></svg><span>Modern UI/UX</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-devices"></use></svg><span>Responsive design</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Performance focused</span></li>
-</ul>
-</article>
-<article class="it-card reveal">
-<div class="it-card-top"><span class="it-number">02</span><span class="it-label">Reviews, simplified</span>
-</div>
-<h3>QR + NFC Google Review Cards</h3>
-<p>Physical cards that make it extremely easy for customers to reach your Google review page and share their experience.</p>
-<div aria-label="Tap NFC or scan QR, then open the Google Review Page and leave a review" class="it-visual flow-visual" role="img">
-<div class="flow-node"><strong>Tap / scan</strong><small>NFC + QR</small>
-</div><span class="flow-arrow">→</span>
-<div class="flow-node"><strong>Google</strong><small>Review page</small>
-</div><span class="flow-arrow">→</span>
-<div class="flow-node"><strong>Leave</strong><small>a review</small>
-</div>
-</div>
-<ul class="it-list" role="list">
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-qr"></use></svg><span>Tap or scan in seconds</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-card"></use></svg><span>Clear, branded card design</span></li>
-<li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-review"></use></svg><span>Make reviews easier to collect</span></li>
-</ul>
-</article>
+          <figure class="support-photo reveal">
+            <img alt="Fresh seeded loaves with wheat on a dark bakery surface" decoding="async" height="798" loading="lazy" src="images/bakery-process.webp" width="1200">
+          </figure>
+        </div>
+      </section>
+      <!-- Section: From food technology to modern business solutions. -->
+      <section class="it-solutions on-dark" id="it-solutions">
+        <div class="container">
+          <div class="section-head wide reveal">
+            <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="m9 7-3 3 3 3m6-6 3 3-3 3M12 17v4m-4 0h8"></path></svg>IT Solutions</span>
+            <h2>From food technology to modern business solutions.</h2>
+            <p>KIDEX is expanding its consulting and solutions work into digital services that help businesses look sharper, get found faster and support customers better.</p>
+          </div>
+          <div class="it-grid">
+            <article class="it-card reveal">
+              <div class="it-card-top"><span class="it-number">01</span><span class="it-label">Web presence</span>
+              </div>
+              <h3>Website Development</h3>
+              <p>Modern, responsive and professional websites that give your business a clear, credible online presence.</p>
+              <div aria-hidden="true" class="it-visual browser-visual">
+                <div class="browser-bar"><i></i><i></i><i></i><span></span>
+                </div>
+                <div class="browser-content"><b></b><b></b><b></b><em></em>
+                </div>
+              </div>
+              <ul class="it-list" role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-layout"></use></svg><span>Modern UI/UX</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-devices"></use></svg><span>Responsive design</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Performance focused</span></li>
+              </ul>
+            </article>
+            <article class="it-card reveal">
+              <div class="it-card-top"><span class="it-number">02</span><span class="it-label">Reviews, simplified</span>
+              </div>
+              <h3>QR + NFC Google Review Cards</h3>
+              <p>Physical cards that make it extremely easy for customers to reach your Google review page and share their experience.</p>
+              <div aria-label="Tap NFC or scan QR, then open the Google Review Page and leave a review" class="it-visual flow-visual" role="img">
+                <div class="flow-node"><strong>Tap / scan</strong><small>NFC + QR</small>
+                </div><span class="flow-arrow">→</span>
+                <div class="flow-node"><strong>Google</strong><small>Review page</small>
+                </div><span class="flow-arrow">→</span>
+                <div class="flow-node"><strong>Leave</strong><small>a review</small>
+                </div>
+              </div>
+              <ul class="it-list" role="list">
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-qr"></use></svg><span>Tap or scan in seconds</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-card"></use></svg><span>Clear, branded card design</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-review"></use></svg><span>Make reviews easier to collect</span></li>
+              </ul>
+            </article>
 
-</div>
-<div class="it-cta reveal">
-<p>Ready to make your digital presence work harder?</p><a class="btn btn-primary" href="contact.html">Explore IT Solutions <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
-</div>
-</div>
-</section>
-<section class="cta-band">
-<div class="container">
-<div class="cta-inner reveal">
-<div class="cta-copy"><span class="eyebrow">Your next step</span>
-<h2>Tell us which of these fits what you're working on.</h2>
-</div>
-<div class="cta-actions">
-<a class="btn btn-primary" href="contact.html">Get in touch <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
-<a class="btn btn-outline-dark" href="about.html">More about KIDEX</a>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div class="container">
-<div class="footer-main">
-<div class="footer-brand">
-<a class="footer-logo" href="index.html" aria-label="KIDEX home"><img src="images/kidex-logo-nav.png" width="560" height="210" alt="KIDEX — Innovation, Consulting, Solutions"></a>
-<p>Consulting for wheat and flour processing, bakery products, confectionery and pasta technology.</p>
-</div>
-<div class="footer-contact">
-<h2>Get in touch</h2>
-<div class="footer-contact-card">
-<a class="footer-contact-link" href="mailto:info@kidex.mk">
-<span class="footer-contact-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
-<span class="footer-contact-copy"><span class="footer-contact-label">Email us</span><span class="footer-contact-value">info@kidex.mk</span></span>
-<span class="footer-contact-arrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
-</a>
-<a class="footer-contact-link" href="tel:+38970431203">
-<span class="footer-contact-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/></svg></span>
-<span class="footer-contact-copy"><span class="footer-contact-label">Call us</span><span class="footer-contact-value">+389 70 431 203</span></span>
-<span class="footer-contact-arrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
-</a>
-</div>
-</div>
-</div>
-<div class="footer-utility">
-<nav class="footer-nav" aria-label="Footer navigation">
-<a href="about.html">About KIDEX</a>
-<a href="services.html">Services</a>
-<a href="contact.html">Contact</a>
-</nav>
-<nav class="footer-social" aria-label="Social media">
-<a href="https://www.instagram.com/kidex.mk/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a>
-<a href="https://www.facebook.com/profile.php?id=100089504146564" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5A24 24 0 0 0 15 1c-3 0-5 1.9-5 5.4V9H7v4h3v8Z" fill="currentColor" stroke="none"/></svg></a>
-<a href="https://www.linkedin.com/in/toni-acoski-96036b47/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="4" height="12" rx=".5" fill="currentColor" stroke="none"/><circle cx="5" cy="4.5" r="2" fill="currentColor" stroke="none"/><path d="M11 21V9h4v1.5c1-1.5 5-2.5 6 1.5v9h-4v-7c0-2-2-2-2 0v7Z" fill="currentColor" stroke="none"/></svg></a>
-</nav>
-</div>
-<div class="footer-bottom">
-<span>© <span data-year="">2026</span> KIDEX. All rights reserved.</span>
-<span class="made">North Macedonia</span>
-</div>
-</div>
-</footer>
-<script src="js/script.js?v=6"></script>
+          </div>
+          <div class="it-cta reveal">
+            <p>Ready to make your digital presence work harder?</p><a class="btn btn-primary" href="contact.html">Explore IT Solutions <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Tell us which of these fits what you're working on. -->
+      <section class="cta-band">
+        <div class="container">
+          <div class="cta-inner reveal">
+            <div class="cta-copy"><span class="eyebrow">Your next step</span>
+              <h2>Tell us which of these fits what you're working on.</h2>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="contact.html">Get in touch <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+              <a class="btn btn-outline-dark" href="about.html">More about KIDEX</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Shared footer: contact actions, navigation and social links; intentionally no logo. -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-contact">
+            <h2>Get in touch</h2>
+            <!-- Email/telephone anchors open the visitor's own application. -->
+            <div class="footer-contact-card">
+              <a class="footer-contact-link" href="mailto:info@kidex.mk">
+                <span class="footer-contact-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
+                <span class="footer-contact-copy"><span class="footer-contact-label">Email us</span><span class="footer-contact-value">info@kidex.mk</span></span>
+                <span class="footer-contact-arrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
+              </a>
+              <a class="footer-contact-link" href="tel:+38970431203">
+                <span class="footer-contact-icon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-3l-5-2-2 2a13 13 0 0 1-6-6l2-2-2-5Z"/></svg></span>
+                <span class="footer-contact-copy"><span class="footer-contact-label">Call us</span><span class="footer-contact-value">+389 70 431 203</span></span>
+                <span class="footer-contact-arrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-utility">
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="about.html">About KIDEX</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+          <!-- External social links use noopener when opening a new tab. -->
+          <nav class="footer-social" aria-label="Social media">
+            <a href="https://www.instagram.com/kidex.mk/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=100089504146564" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5A24 24 0 0 0 15 1c-3 0-5 1.9-5 5.4V9H7v4h3v8Z" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.linkedin.com/in/toni-acoski-96036b47/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="4" height="12" rx=".5" fill="currentColor" stroke="none"/><circle cx="5" cy="4.5" r="2" fill="currentColor" stroke="none"/><path d="M11 21V9h4v1.5c1-1.5 5-2.5 6 1.5v9h-4v-7c0-2-2-2-2 0v7Z" fill="currentColor" stroke="none"/></svg></a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-year="">2026</span> KIDEX. All rights reserved.</span>
+          <span class="made">North Macedonia</span>
+        </div>
+      </div>
+    </footer>
+    <!-- Loaded after markup: shared JS can query components without a DOM-ready listener. -->
+    <script src="js/script.js?v=9"></script>
 
 
 </body></html>

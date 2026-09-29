@@ -1,4 +1,8 @@
-"""Browser regression checks. Start python -m http.server 4173 before running."""
+"""Optional Python browser checks against a local server on port 4173.
+
+Start python -m http.server 4173 first; this script never contacts the live site.
+For the broader Node-based suite and setup instructions, see MAINTENANCE.md.
+"""
 from pathlib import Path
 import json
 from playwright.sync_api import sync_playwright
@@ -15,6 +19,7 @@ with sync_playwright() as p:
     page.on('pageerror',lambda error: errors.append(str(error)))
     page.on('response',lambda response: errors.append(f'HTTP {response.status}: {response.url}') if response.status>=400 and response.url.startswith(BASE) else None)
     results=[]
+    # Visit both languages at representative widths; collect screenshots and axe reports.
     for width in (360,390,768,1024,1440):
         page.set_viewport_size({'width':width,'height':900})
         for lang in ('','mk/'):
@@ -37,9 +42,12 @@ with sync_playwright() as p:
                 results.append(f'{lang}{filename}: {width}px OK')
     page.set_viewport_size({'width':390,'height':844})
     page.goto(BASE+'mk/services.html#laboratory-equipment')
+    # Mobile language links are hidden until the compact dropdown opens.
+    page.locator('.language-toggle').click()
     page.locator('.language-switch a[lang="en"]').click()
     page.wait_for_url('**/services.html#laboratory-equipment')
     assert '/mk/' not in page.url
+    page.locator('.language-toggle').click()
     page.locator('.language-switch a[lang="mk"]').click()
     page.wait_for_url('**/mk/services.html#laboratory-equipment')
     page.locator('.hamburger').click()
@@ -81,6 +89,7 @@ with sync_playwright() as p:
     page.evaluate("Object.defineProperty(navigator, 'clipboard', { value: {writeText: async () => {throw Error('Denied')}}, configurable: true })")
     page.locator('.copy-message').click()
     assert 'не е достапно' in page.locator('.form-status').inner_text()
+    # Static navigation and readable content must survive disabled JavaScript.
     nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844})
     static=nojs.new_page()
     for lang in ('','mk/'):
