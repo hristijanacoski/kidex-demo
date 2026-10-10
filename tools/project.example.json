@@ -1,0 +1,25 @@
+{
+  "id": "pizza-championship-skopje",
+  "published": false,
+  "date": "YYYY-MM-DD",
+  "title": {
+    "en": "Pizza championship in Skopje",
+    "mk": "Првенство во подготовка на пица во Скопје"
+  },
+  "summary": {
+    "en": "Replace this with a short, factual description of the event and KIDEX's contribution.",
+    "mk": "Заменете го овој текст со краток опис на настанот и придонесот на KIDEX."
+  },
+  "role": {
+    "en": "Consulting partner",
+    "mk": "Консултантски партнер"
+  },
+  "location": {
+    "en": "Skopje, North Macedonia",
+    "mk": "Скопје, Северна Македонија"
+  },
+  "documents": [
+    { "file": "documents/projects/pizza-championship-skopje.pdf" },
+    { "file": "documents/projects/pizza-championship-skopje.pptx" }
+  ]
+}

@@ -5,13 +5,13 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
     <!-- Document metadata: encoding, viewport, search snippets and social previews. -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>За нас — KIDEX | Иновации, консалтинг и решенија</title>
+    <title>За нас - KIDEX | Иновации, советување и решенија</title>
     <meta content="КИДЕКС ДООЕЛ нуди консултантски услуги за преработка на пченица и производство на брашно, пекарски и кондиторски производи и тестенини, со 25 години практично искуство." name="description">
     <meta content="#293333" name="theme-color">
     <meta content="website" property="og:type">
     <meta content="KIDEX" property="og:site_name">
     <meta content="За KIDEX" property="og:title">
-    <meta content="Партнер за иновации и консалтинг за производители на леб и брашно." property="og:description">
+    <meta content="Партнер за иновации и советување за производители на леб и брашно." property="og:description">
     <meta content="https://kidex.mk/images/kidex-logo-horizontal.png" property="og:image">
     <meta content="https://kidex.mk/mk/about.html" property="og:url">
     <link href="../favicon/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
@@ -20,10 +20,10 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
     <link href="../favicon/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="../css/style.css?v=42" rel="stylesheet">
+    <link href="../css/style.css?v=43" rel="stylesheet">
     <!-- No-JavaScript fallback keeps navigation visible and offers direct contact links. -->
     <noscript><style>.hamburger { display:none !important; } .main-nav { display:flex !important; flex-wrap:wrap; gap:.8rem; } .site-header .container { display:flex; flex-wrap:wrap; padding-block:.75rem; } .main-nav { order:3; width:100%; justify-content:center; } #contact-form .form-field, #contact-form button, #contact-form .form-intro { display:none; } .hero, .page-hero { padding-top:11rem; }</style></noscript><link href="https://kidex.mk/mk/about.html" rel="canonical"><link href="https://kidex.mk/about.html" hreflang="en" rel="alternate"><link href="https://kidex.mk/mk/about.html" hreflang="mk" rel="alternate"><link href="https://kidex.mk/about.html" hreflang="x-default" rel="alternate"><meta content="mk_MK" property="og:locale"><meta content="en_GB" property="og:locale:alternate"></head>
-  <body class="page-about"><a class="skip-link" href="#main">Прескокни до содржината</a>
+  <body class="page-about"><a class="skip-link" href="#main">Прескокнете до содржината</a>
     <!-- Reusable SVG symbols: use href="#icon-name" references these local, decorative icons. -->
     <svg aria-hidden="true" height="0" style="position:absolute" width="0">
       <symbol id="icon-sprig" viewBox="0 0 24 24"><path d="M12 22V3m0 6C7 9 5 6 5 3c4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0-7c5 0 7-3 7-6-4 0-7 3-7 6Zm0 5c5 0 7-3 7-6-4 0-7 3-7 6Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.3"></path></symbol>
@@ -34,17 +34,18 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
     <!-- Shared fixed header. JS adds nav-ready only after mobile controls are wired. -->
     <header class="site-header" id="site-header">
       <div class="container">
-        <button aria-controls="mobile-panel" aria-expanded="false" aria-label="Отвори мени" class="hamburger" type="button">
+        <button aria-controls="mobile-panel" aria-expanded="false" aria-label="Отворете го менито" class="hamburger" type="button">
           <span></span><span></span><span></span>
         </button>
-        <a aria-label="KIDEX почетна" class="brand" href="index.html">
-          <img alt="KIDEX — Иновации, консалтинг, решенија" height="210" src="../images/kidex-logo-nav.png" width="560">
+        <a aria-label="Почетна страница на KIDEX" class="brand" href="index.html">
+          <img alt="KIDEX - Иновации, советување, решенија" height="210" src="../images/kidex-logo-nav.png" width="560">
         </a>
         <nav aria-label="Главна навигација" class="main-nav">
           <a href="index.html">Почетна</a>
           <a aria-current="page" href="about.html">За нас</a>
           <a href="services.html">Услуги</a>
-          <a href="contact.html">Контакт</a>
+          <a href="projects.html">Проекти</a>
+            <a href="contact.html">Контакт</a>
         </nav>
         <div class="nav-actions">
           <!-- Real language links work without JS; enhancement adds the compact mobile dropdown. -->
@@ -61,7 +62,8 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
         <a href="index.html">Почетна</a>
         <a aria-current="page" href="about.html">За нас</a>
         <a href="services.html">Услуги</a>
-        <a href="contact.html">Контакт</a>
+        <a href="projects.html">Проекти</a>
+            <a href="contact.html">Контакт</a>
       </nav>
       <a class="btn btn-outline" href="contact.html">Разговарајте со нас <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
     </div>
@@ -86,16 +88,16 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <div class="about-intro reveal">
             <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Кои сме ние</span>
             <h2>Стручно знаење. Практични резултати.</h2>
-            <figure class="about-photo"><img src="../images/bread-evaluation.webp" srcset="../images/bread-evaluation-600.webp 600w, ../images/bread-evaluation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Раце што држат две половини леб за да се види неговата средина" width="1200" height="800" loading="lazy" decoding="async"></figure>
+            <figure class="about-photo"><img src="../images/bread-evaluation.webp" srcset="../images/bread-evaluation-600.webp 600w, ../images/bread-evaluation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Раце што држат две половини од леб и ја покажуваат структурата на неговата средина" width="1200" height="800" loading="lazy" decoding="async"></figure>
           </div>
           <div class="about-copy reveal">
-            <p class="lead">КИДЕКС ДООЕЛ е консултантска компанија специјализирана за целокупната технологија на преработка на пченица и производство на брашно, пекарски и кондиторски производи и тестенини.</p>
+            <p class="lead">КИДЕКС ДООЕЛ е консултантска компанија специјализирана за технолошките процеси при преработка на пченица и производство на брашно, пекарски и кондиторски производи и тестенини.</p>
             <div class="about-divider">
             </div>
-            <p>Компанијата има 25 години практично искуство во овие индустрии и голем број успешни проекти со компании во Северна Македонија и регионот.</p>
-            <p>KIDEX учествува на саеми, семинари и обуки, каде што ги претставува своето искуство, успешните проекти и иновациите во областите за кои е специјализиран.</p>
-            <p>Работата ја опфаќа целокупната технологија на преработка на пченица и производство на брашно, пекарски и кондиторски производи и тестенини, вклучувајќи опрема и контрола на квалитетот.</p>
-            <p>Јавете ни се и заедно да создадеме успешна приказна.</p>
+            <p>Компанијата има 25 години практично искуство во овие области и голем број успешни проекти со компании во Северна Македонија и регионот.</p>
+            <p>KIDEX учествува на саеми, семинари и обуки, каде што споделува искуства и претставува успешни проекти и иновации од своите области на работа.</p>
+            <p>Нејзината работа ги опфаќа производните процеси, опремата и контролата на квалитетот при преработката на пченица и производството на брашно, пекарски и кондиторски производи и тестенини.</p>
+            <p>Јавете ни се за заедно да го направиме вашиот проект успешен.</p>
           </div>
         </div>
       </section>
@@ -105,7 +107,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <div class="principle-heading reveal">
             <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Принцип на работа</span>
             <h2 id="principle-title">Подобри производи, создадени заедно.</h2>
-            <p>Практична поддршка во секој чекор, од разбирање на производот до негово успешно производство.</p>
+            <p>Практична поддршка во секоја фаза, од анализа на производот до успешно производство.</p>
           </div>
           <ol class="engagement-steps reveal" role="list">
             <li class="engagement-step">
@@ -126,7 +128,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
               <div class="engagement-marker" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false"><path d="M9 4H5v17h14V4h-4M9 2h6v4H9ZM8 13l3 3 5-6"></path></svg></div>
               <div class="engagement-copy">
                 <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">03</span><h3>Применуваме</h3></div>
-                <p>Продолжувате со практична рецептура, формулација или процес што вашиот тим може да го примени.</p>
+                <p>Добивате практична рецептура, формулација или процес што вашиот тим може да го примени во производството.</p>
               </div>
             </li>
           </ol>
@@ -142,9 +144,9 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <div class="quality-panel reveal">
             <figure class="quality-photo"><img src="../images/bread-making.webp" alt="Рустикален леб со природен квасец посипан со брашно" width="1200" height="800" loading="lazy" decoding="async"></figure>
             <ul class="quality-points" role="list">
-              <li><svg class="quality-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 22V3m0 6C7 9 5 6 5 3c4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0-7c5 0 7-3 7-6-4 0-7 3-7 6Zm0 5c5 0 7-3 7-6-4 0-7 3-7 6Z"></path></svg><div><h3>Состојки</h3><p>Запознајте ги брашното, зрното и суровините од кои се создава вашиот производ.</p></div></li>
-              <li><svg class="quality-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 7h6m4 0h8M3 17h10m4 0h4"></path><circle cx="11" cy="7" r="2"></circle><circle cx="15" cy="17" r="2"></circle></svg><div><h3>Процес</h3><p>Подобрете ја рецептурата и нејзината примена на вашата производна линија.</p></div></li>
-              <li><svg class="quality-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg><div><h3>Готов производ</h3><p>Поврзете ги квалитетот, вкусот и постојаноста во крајниот резултат.</p></div></li>
+              <li><svg class="quality-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 22V3m0 6C7 9 5 6 5 3c4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0-7c5 0 7-3 7-6-4 0-7 3-7 6Zm0 5c5 0 7-3 7-6-4 0-7 3-7 6Z"></path></svg><div><h3>Состојки</h3><p>Запознајте ги својствата на брашното, житото и другите суровини што ги користите во производството.</p></div></li>
+              <li><svg class="quality-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 7h6m4 0h8M3 17h10m4 0h4"></path><circle cx="11" cy="7" r="2"></circle><circle cx="15" cy="17" r="2"></circle></svg><div><h3>Процес</h3><p>Усовршете ја рецептурата и начинот на нејзина примена во производството.</p></div></li>
+              <li><svg class="quality-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg><div><h3>Готов производ</h3><p>Постигнете добар вкус и воедначен квалитет на готовиот производ.</p></div></li>
             </ul>
           </div>
         </div>
@@ -155,11 +157,11 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <div class="invitation-panel reveal">
             <div class="invitation-copy">
               <span class="eyebrow"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4V4ZM8 8h8M8 12h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>Вашиот следен чекор</span>
-              <h2 id="invitation-title">Да го подобриме вашиот следен производ.</h2>
+              <h2 id="invitation-title">Заедно до подобар производ.</h2>
               <p>Кажете ни што произведувате и што сакате да подобрите.</p>
             </div>
             <div class="invitation-actions">
-              <a class="btn btn-primary" href="contact.html"><span>Разговарајте за вашиот проект</span> <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+              <a class="btn btn-primary" href="contact.html"><span>Разговарајте со нас за вашиот проект</span> <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
               <a class="invitation-secondary" href="services.html"><span>Погледнете ги услугите</span> <svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#icon-arrow"></use></svg></a>
             </div>
           </div>
@@ -171,7 +173,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
       <div class="container">
         <div class="footer-main">
           <div class="footer-contact">
-            <h2>Контактирајте нè</h2>
+            <h2>Контактирајте со нас</h2>
             <!-- Email/telephone anchors open the visitor's own application. -->
             <div class="footer-contact-card">
               <a class="footer-contact-link" href="mailto:info@kidex.mk">
@@ -191,6 +193,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <nav class="footer-nav" aria-label="Навигација во подножјето">
             <a href="about.html">За KIDEX</a>
             <a href="services.html">Услуги</a>
+            <a href="projects.html">Проекти</a>
             <a href="contact.html">Контакт</a>
           </nav>
           <!-- External social links use noopener when opening a new tab. -->
@@ -207,7 +210,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
       </div>
     </footer>
     <!-- Loaded after markup: shared JS can query components without a DOM-ready listener. -->
-    <script src="../js/script.js?v=9"></script>
+    <script src="../js/script.js?v=10"></script>
 
 
 </body></html>

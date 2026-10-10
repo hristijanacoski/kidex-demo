@@ -47,7 +47,7 @@ async function check(browser, name, task) {
     try {
       for (const viewport of [{ width: 320, height: 700 }, { width: 768, height: 900 }, { width: 1440, height: 900 }, { width: 812, height: 375 }]) {
         await page.setViewportSize(viewport);
-        for (const lang of ['', 'mk/']) for (const name of ['index', 'about', 'services', 'contact']) {
+        for (const lang of ['', 'mk/']) for (const name of ['index', 'about', 'services', 'projects', 'contact']) {
           const label = `${lang}${name} ${viewport.width}x${viewport.height}`;
           await check(engine, `Page integrity: ${label}`, async () => {
             await page.goto(`${base}${lang}${name}.html`);
@@ -81,7 +81,7 @@ async function check(browser, name, task) {
             });
           }
         }
-        console.log(`Checked ${engine}: 8 pages at ${viewport.width}x${viewport.height}`);
+        console.log(`Checked ${engine}: 10 pages at ${viewport.width}x${viewport.height}`);
       }
       for (const lang of ['', 'mk/']) {
         await page.setViewportSize({ width: 390, height: 844 });

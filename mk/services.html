@@ -5,13 +5,13 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
     <!-- Document metadata: encoding, viewport, search snippets and social previews. -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Услуги — KIDEX | Иновации, консалтинг и решенија</title>
-    <meta content="Консалтинг, развој на производи и ИТ решенија од KIDEX за производители на храна и современи бизниси." name="description">
+    <title>Услуги - KIDEX | Иновации, советување и решенија</title>
+    <meta content="Советување, развој на производи и ИТ решенија од KIDEX за производители на храна и современи бизниси." name="description">
     <meta content="#293333" name="theme-color">
     <meta content="website" property="og:type">
     <meta content="KIDEX" property="og:site_name">
-    <meta content="Услуги — KIDEX" property="og:title">
-    <meta content="KIDEX консалтинг, развој на производи и ИТ решенија." property="og:description">
+    <meta content="Услуги - KIDEX" property="og:title">
+    <meta content="Советување, развој на производи и ИТ решенија од KIDEX." property="og:description">
     <meta content="https://kidex.mk/images/kidex-logo-horizontal.png" property="og:image">
     <meta content="https://kidex.mk/mk/services.html" property="og:url">
     <link href="../favicon/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
@@ -20,10 +20,10 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
     <link href="../favicon/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="../css/style.css?v=42" rel="stylesheet">
+    <link href="../css/style.css?v=43" rel="stylesheet">
     <!-- No-JavaScript fallback keeps navigation visible and offers direct contact links. -->
     <noscript><style>.hamburger { display:none !important; } .main-nav { display:flex !important; flex-wrap:wrap; gap:.8rem; } .site-header .container { display:flex; flex-wrap:wrap; padding-block:.75rem; } .main-nav { order:3; width:100%; justify-content:center; } #contact-form .form-field, #contact-form button, #contact-form .form-intro { display:none; } .hero, .page-hero { padding-top:11rem; }</style></noscript><link href="https://kidex.mk/mk/services.html" rel="canonical"><link href="https://kidex.mk/services.html" hreflang="en" rel="alternate"><link href="https://kidex.mk/mk/services.html" hreflang="mk" rel="alternate"><link href="https://kidex.mk/services.html" hreflang="x-default" rel="alternate"><meta content="mk_MK" property="og:locale"><meta content="en_GB" property="og:locale:alternate"></head>
-  <body class="page-services"><a class="skip-link" href="#main">Прескокни до содржината</a>
+  <body class="page-services"><a class="skip-link" href="#main">Прескокнете до содржината</a>
     <!-- Reusable SVG symbols: use href="#icon-name" references these local, decorative icons. -->
     <svg aria-hidden="true" height="0" style="position:absolute" width="0">
       <symbol id="icon-sprig" viewBox="0 0 24 24"><path d="M12 22V3m0 6C7 9 5 6 5 3c4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0 5c-5 0-7-3-7-6 4 0 7 3 7 6Zm0-7c5 0 7-3 7-6-4 0-7 3-7 6Zm0 5c5 0 7-3 7-6-4 0-7 3-7 6Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.3"></path></symbol>
@@ -56,17 +56,18 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
     <!-- Shared fixed header. JS adds nav-ready only after mobile controls are wired. -->
     <header class="site-header" id="site-header">
       <div class="container">
-        <button aria-controls="mobile-panel" aria-expanded="false" aria-label="Отвори мени" class="hamburger" type="button">
+        <button aria-controls="mobile-panel" aria-expanded="false" aria-label="Отворете го менито" class="hamburger" type="button">
           <span></span><span></span><span></span>
         </button>
-        <a aria-label="KIDEX почетна" class="brand" href="index.html">
-          <img alt="KIDEX — Иновации, консалтинг, решенија" height="210" src="../images/kidex-logo-nav.png" width="560">
+        <a aria-label="Почетна страница на KIDEX" class="brand" href="index.html">
+          <img alt="KIDEX - Иновации, советување, решенија" height="210" src="../images/kidex-logo-nav.png" width="560">
         </a>
         <nav aria-label="Главна навигација" class="main-nav">
           <a href="index.html">Почетна</a>
           <a href="about.html">За нас</a>
           <a aria-current="page" href="services.html">Услуги</a>
-          <a href="contact.html">Контакт</a>
+          <a href="projects.html">Проекти</a>
+            <a href="contact.html">Контакт</a>
         </nav>
         <div class="nav-actions">
           <!-- Real language links work without JS; enhancement adds the compact mobile dropdown. -->
@@ -83,7 +84,8 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
         <a href="index.html">Почетна</a>
         <a href="about.html">За нас</a>
         <a aria-current="page" href="services.html">Услуги</a>
-        <a href="contact.html">Контакт</a>
+        <a href="projects.html">Проекти</a>
+            <a href="contact.html">Контакт</a>
       </nav>
       <a class="btn btn-outline" href="contact.html">Разговарајте со нас <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
     </div>
@@ -96,8 +98,8 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <nav aria-label="Патека" class="breadcrumb"><a href="index.html">Почетна</a><span aria-hidden="true">/</span><span aria-current="page">Услуги</span></nav>
           <div class="services-hero-copy">
             <span class="eyebrow">Услуги</span>
-            <h1 id="services-hero-title">Подобри производи. <em>Попаметен бизнис.</em></h1>
-            <p>Експертиза во прехранбената технологија и дигитални решенија. Изберете ја поддршката за вашиот следен чекор.</p>
+            <h1 id="services-hero-title">Подобри производи. <em>Поефикасен бизнис.</em></h1>
+            <p>Стручно знаење во прехранбената технологија и дигитални решенија. Изберете поддршка според вашите потреби.</p>
           </div>
           <nav aria-label="Истражете ги услугите" class="service-jump service-jump-tiles">
             <a href="#optimization"><svg class="service-jump-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Оптимизација на производи</span><svg class="service-jump-arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
@@ -112,8 +114,8 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
         <div class="container">
           <div class="section-head wide reveal">
             <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Што работиме</span>
-            <h2>Практичен консалтинг за технологиите зад секојдневната храна.</h2>
-            <p>Со 25 години искуство, KIDEX работи во преработката на пченица и производството на брашно, пекарски и кондиторски производи и тестенини, помагајќи им на производителите да ги претворат искуството и иновациите во успешни проекти.</p>
+            <h2>Практично советување за технологиите на производство на храна.</h2>
+            <p>Со 25 години искуство, KIDEX им помага на производителите да ги применат практичното знаење и иновациите во преработката на пченица и производството на брашно, пекарски и кондиторски производи и тестенини.</p>
           </div>
           <!-- Service detail: optimization. Preserve this ID for jump links and cross-language anchors. -->
           <div class="service-row service-detail reveal" id="optimization">
@@ -125,21 +127,21 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
                   <span class="tag">Подобрете го она што веќе функционира</span>
                 </div>
               </div>
-              <figure class="service-photo"><img src="../images/bread-evaluation.webp" srcset="../images/bread-evaluation-600.webp 600w, ../images/bread-evaluation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Раце што држат две половини леб за да се види неговата средина" width="1200" height="800" loading="lazy" decoding="async"></figure>
+              <figure class="service-photo"><img src="../images/bread-evaluation.webp" srcset="../images/bread-evaluation-600.webp 600w, ../images/bread-evaluation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Раце што држат две половини од леб и ја покажуваат структурата на неговата средина" width="1200" height="800" loading="lazy" decoding="async"></figure>
             </div>
             <div class="service-desc">
-              <p>Прецизно приспособување на состојките, процесите и рецептурите за висок квалитет, вкус и хранлива вредност на готовите пекарски производи, со зачувување на она што веќе функционира.</p>
+              <p>Усовршување на составот, процесите и рецептурите за повисок квалитет, подобар вкус и поголема хранлива вредност на готовите пекарски производи, со зачувување на нивните добри својства.</p>
               <ul role="list">
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Анализа на состојките и формулацијата</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Приспособување на процесот на постојната линија</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Анализа на состојките и составот на производот</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-sliders"></use></svg><span>Усовршување на процесот на постојната производна линија</span></li>
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-leaf"></use></svg><span>Подобрување на квалитетот, вкусот и хранливата вредност</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Технологија, опрема и контрола на квалитетот во мелничарство, пекарство, кондиторство и производство на тестенини</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-wheat"></use></svg><span>Мелничарска технологија: квалитет на пченицата, чистење и кондиционирање, мелнички валци, мелнички дијаграми, пакување и означување на брашно</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-pasta"></use></svg><span>Технологија на тестенини: суровини, мешање, сушење, пакување и означување</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Технологија, опрема и контрола на квалитетот во мелничарството, пекарството, кондиторството и производството на тестенини</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-wheat"></use></svg><span>Мелничарска технологија: квалитет на пченицата, чистење и кондиционирање, мелничарски валци и дијаграми, пакување и означување на брашното</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-pasta"></use></svg><span>Технологија на производство на тестенини: суровини, мешање, сушење, пакување и означување</span></li>
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-oven"></use></svg><span>Пекарска технологија: суровини, мешање, ферментација, печење, ладење, замрзнување, пакување и означување</span></li>
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Употреба на ензими и адитиви во мелничарски, пекарски и кондиторски производи и тестенини</span></li>
               </ul>
-              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Разговарајте за подобрување на производот</span></a>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Да го подобриме вашиот производ</span></a>
             </div>
           </div>
           <!-- Service detail: development. Preserve this ID for jump links and cross-language anchors. -->
@@ -155,16 +157,16 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
               <figure class="service-photo"><img src="../images/dough-preparation.webp" srcset="../images/dough-preparation-600.webp 600w, ../images/dough-preparation.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Пекар што меси тесто на работна маса посипана со брашно" width="1200" height="800" loading="lazy" decoding="async"></figure>
             </div>
             <div class="service-desc">
-              <p>Создавање и лансирање нови производи според побарувачката на пазарот и потребите на потрошувачите — од почетен концепт до формулација подготвена за производство и лансирање.</p>
+              <p>Развој и пласирање нови производи според побарувачката на пазарот и потребите на потрошувачите - од почетна идеја до рецептура подготвена за производство.</p>
               <ul role="list">
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-idea"></use></svg><span>Развој на концепт според реалната побарувачка</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Осмислување рецептури и формулации</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg><span>Поддршка до производство и лансирање</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Развој на приспособени ензимски комплекси за мелничарство, пекарски подобрувачи, премикси и концентрати, подобрувачи за тестенини и коректори за кондиторско брашно</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-clipboard"></use></svg><span>Спецификации на производи, пресметки на производни трошоци и хранливи вредности</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-education"></use></svg><span>Стручна обука за технолози и вработени во мелничарство, пекарство, кондиторство и производство на тестенини и подобрувачи</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-idea"></use></svg><span>Развој на концепт според реалната побарувачка на пазарот</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg><span>Развој на рецептури и состав на производите</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-launch"></use></svg><span>Поддршка до почетокот на производството и излегувањето на пазарот</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-molecule"></use></svg><span>Развој на ензимски комплекси за мелничарството, пекарски подобрувачи, премикси и концентрати, подобрувачи за тестенини и коректори за брашно за кондиторски производи, приспособени на вашите потреби</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-clipboard"></use></svg><span>Спецификации на производите, пресметки на производните трошоци и податоци за хранливата вредност</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-education"></use></svg><span>Стручна обука за технолози и вработени во мелничарството, пекарството, кондиторството и производството на тестенини и подобрувачи</span></li>
               </ul>
-              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Разговарајте за нов производ</span></a>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Да развиеме нов производ</span></a>
             </div>
           </div>
           <!-- Service detail: laboratory-equipment. Preserve this ID for jump links and cross-language anchors. -->
@@ -177,10 +179,10 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
                   <span class="tag">Мерете со сигурност</span>
                 </div>
               </div>
-              <figure class="service-photo"><img src="../images/laboratory-measurement.webp" srcset="../images/laboratory-measurement-600.webp 600w, ../images/laboratory-measurement.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Техничар со ракавици што користи аналитичка лабораториска вага" width="1200" height="800" loading="lazy" decoding="async"></figure>
+              <figure class="service-photo"><img src="../images/mixolab-300.webp" srcset="../images/mixolab-300-600.webp 600w, ../images/mixolab-300.webp 1200w" sizes="(max-width: 860px) 90vw, (max-width: 1280px) 42vw, 544px" alt="Анализатор за брашно и тесто CHOPIN Mixolab 300 на лабораториска работна маса" width="1200" height="780" loading="lazy" decoding="async"></figure>
             </div>
             <div class="service-desc">
-              <p>KIDEX има стручни компетенции и технички вештини за користење лабораториска опрема за контрола на квалитетот на пченица, брашно, пекарски и кондиторски производи и тестенини.</p>
+              <p>KIDEX располага со стручно знаење и практично искуство во користењето лабораториска опрема за контрола на квалитетот на пченицата, брашното, пекарските и кондиторските производи и тестенините.</p>
               <ul role="list">
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Контрола на квалитетот со опрема од KPM Analytics, вклучувајќи Chopin Mixolab, Alveograph и SD Matic</span></li>
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-equipment"></use></svg><span>Опрема од Brabender и Promylograph, вклучувајќи Farinograph, Extensograph и Amilograph</span></li>
@@ -188,7 +190,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg><span>Стручна анализа на лабораториски резултати</span></li>
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-consult"></use></svg><span>Советување при избор на лабораториска опрема за пченица, брашно, пекарски и кондиторски производи и тестенини</span></li>
               </ul>
-              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Советувајте се за опрема</span></a>
+              <a class="service-contact-button" href="contact.html"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#feature-consult"></use></svg><span>Побарајте совет за опрема</span></a>
             </div>
           </div>
         </div>
@@ -198,21 +200,21 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
         <div class="container">
           <div class="engagement-heading reveal">
             <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Тек на соработката</span>
-            <h2 id="engagement-title">Од првиот увид до производството.</h2>
+            <h2 id="engagement-title">Од првичната проценка до производството.</h2>
           </div>
           <ol class="engagement-steps reveal" role="list">
             <li class="engagement-step">
               <div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-analysis"></use></svg></div>
               <div class="engagement-copy">
                 <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">01</span><h3>Проценка</h3></div>
-                <p>Откријте ги можностите во вашиот производ, процес или пазар.</p>
+                <p>Ги утврдуваме можностите за подобрување на производот и процесот, како и потребите на пазарот.</p>
               </div>
             </li>
             <li class="engagement-step">
               <div class="engagement-marker" aria-hidden="true"><svg focusable="false" width="24" height="24"><use href="#feature-flask"></use></svg></div>
               <div class="engagement-copy">
                 <div class="engagement-step-heading"><span class="engagement-number" aria-hidden="true">02</span><h3>Заеднички развој</h3></div>
-                <p>Ги подобруваме состојките, рецептурите и процесите заедно со вашиот тим.</p>
+                <p>Заедно со вашиот тим го подобруваме изборот на состојки и ги усовршуваме рецептурите и процесите.</p>
               </div>
             </li>
             <li class="engagement-step">
@@ -231,11 +233,11 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <div class="support-photo-copy reveal">
             <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false"><use href="#icon-sprig"></use></svg>Создадено за производството</span>
             <h2>Идеите се вредни кога функционираат во производството.</h2>
-            <p>Секоја соработка со KIDEX поврзува силен концепт со резултат што тимот може да го повтори, измери и подобри.</p>
+            <p>Секоја соработка со KIDEX води од јасна идеја до мерлив резултат што вашиот тим може постојано да го постигнува и дополнително да го подобрува.</p>
           </div>
 
           <figure class="support-photo reveal">
-            <img alt="Свежи лебови со семки и пченица на темна пекарска површина" decoding="async" height="798" loading="lazy" src="../images/bakery-process.webp" width="1200">
+            <img alt="Свежи лебови со семки и класје пченица на темна работна површина" decoding="async" height="798" loading="lazy" src="../images/bakery-process.webp" width="1200">
           </figure>
         </div>
       </section>
@@ -245,14 +247,14 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <div class="section-head wide reveal">
             <span class="eyebrow"><svg aria-hidden="true" class="sprig" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="m9 7-3 3 3 3m6-6 3 3-3 3M12 17v4m-4 0h8"></path></svg>ИТ решенија</span>
             <h2>Од прехранбена технологија до современи деловни решенија.</h2>
-            <p>KIDEX ги проширува своите консултантски услуги со дигитални решенија што им помагаат на бизнисите подобро да се претстават, полесно да бидат пронајдени и подобро да ги поддржат клиентите.</p>
+            <p>KIDEX ги проширува своите консултантски услуги со дигитални решенија за подобро претставување на бизнисите на интернет, поголема видливост и подобра поддршка за клиентите.</p>
           </div>
           <div class="it-grid">
             <article class="it-card reveal">
-              <div class="it-card-top"><span class="it-number">01</span><span class="it-label">Веб-присуство</span>
+              <div class="it-card-top"><span class="it-number">01</span><span class="it-label">Присуство на интернет</span>
               </div>
               <h3>Изработка на веб-страници</h3>
-              <p>Современи, приспособливи и професионални веб-страници што му даваат на вашиот бизнис јасно и веродостојно онлајн присуство.</p>
+              <p>Современи и професионални веб-страници, приспособени за различни уреди, што го претставуваат вашиот бизнис на интернет и градат доверба кај посетителите.</p>
               <div aria-hidden="true" class="it-visual browser-visual">
                 <div class="browser-bar"><i></i><i></i><i></i><span></span>
                 </div>
@@ -260,18 +262,18 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
                 </div>
               </div>
               <ul class="it-list" role="list">
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-layout"></use></svg><span>Современ дизајн и корисничко искуство</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-layout"></use></svg><span>Современ дизајн и добро корисничко искуство</span></li>
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-devices"></use></svg><span>Дизајн за сите уреди</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Фокус на брзината</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-gauge"></use></svg><span>Брзо вчитување</span></li>
               </ul>
             </article>
             <article class="it-card reveal">
-              <div class="it-card-top"><span class="it-number">02</span><span class="it-label">Рецензии, поедноставено</span>
+              <div class="it-card-top"><span class="it-number">02</span><span class="it-label">Полесно до рецензии</span>
               </div>
-              <h3>QR + NFC картички за Google рецензии</h3>
-              <p>Физички картички со кои клиентите лесно ја отвораат вашата страница за Google рецензии и го споделуваат своето искуство.</p>
-              <div aria-label="Допрете NFC или скенирајте QR, отворете ја страницата за Google рецензии и оставете рецензија" class="it-visual flow-visual" role="img">
-                <div class="flow-node"><strong>Допрете / скенирајте</strong><small>NFC + QR</small>
+              <h3>QR + NFC картички за рецензии на Google</h3>
+              <p>Физички картички со кои клиентите лесно ја отвораат страницата за рецензии на вашиот бизнис на Google и го споделуваат своето искуство.</p>
+              <div aria-label="Приближете го телефонот до NFC-картичката или скенирајте го QR-кодот, потоа отворете ја страницата за рецензии на Google и оставете рецензија" class="it-visual flow-visual" role="img">
+                <div class="flow-node"><strong>Приближете / скенирајте</strong><small>NFC + QR</small>
                 </div><span class="flow-arrow">→</span>
                 <div class="flow-node"><strong>Google</strong><small>Рецензии</small>
                 </div><span class="flow-arrow">→</span>
@@ -279,15 +281,15 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
                 </div>
               </div>
               <ul class="it-list" role="list">
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-qr"></use></svg><span>Допир или скенирање за неколку секунди</span></li>
-                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-card"></use></svg><span>Јасен дизајн со вашиот бренд</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-qr"></use></svg><span>Пристап за неколку секунди преку NFC или QR-код</span></li>
+                <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-card"></use></svg><span>Прегледен дизајн усогласен со вашиот бренд</span></li>
                 <li><svg class="service-feature-icon" aria-hidden="true" focusable="false" width="24" height="24"><use href="#feature-review"></use></svg><span>Полесно собирање рецензии</span></li>
               </ul>
             </article>
 
           </div>
           <div class="it-cta reveal">
-            <p>Подготвени сте за поефикасно дигитално присуство?</p><a class="btn btn-primary" href="contact.html">Истражете ги ИТ решенијата <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+            <p>Сакате вашето дигитално присуство да носи подобри резултати?</p><a class="btn btn-primary" href="contact.html">Истражете ги ИТ решенијата <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
           </div>
         </div>
       </section>
@@ -299,7 +301,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
               <h2>Кажете ни која услуга одговара на вашиот проект.</h2>
             </div>
             <div class="cta-actions">
-              <a class="btn btn-primary" href="contact.html">Контактирајте нè <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
+              <a class="btn btn-primary" href="contact.html">Контактирајте со нас <svg aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg></a>
               <a class="btn btn-outline-dark" href="about.html">Повеќе за KIDEX</a>
             </div>
           </div>
@@ -311,7 +313,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
       <div class="container">
         <div class="footer-main">
           <div class="footer-contact">
-            <h2>Контактирајте нè</h2>
+            <h2>Контактирајте со нас</h2>
             <!-- Email/telephone anchors open the visitor's own application. -->
             <div class="footer-contact-card">
               <a class="footer-contact-link" href="mailto:info@kidex.mk">
@@ -331,6 +333,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
           <nav class="footer-nav" aria-label="Навигација во подножјето">
             <a href="about.html">За KIDEX</a>
             <a href="services.html">Услуги</a>
+            <a href="projects.html">Проекти</a>
             <a href="contact.html">Контакт</a>
           </nav>
           <!-- External social links use noopener when opening a new tab. -->
@@ -347,7 +350,7 @@ Shared styles and browser behavior live in css/style.css and js/script.js. -->
       </div>
     </footer>
     <!-- Loaded after markup: shared JS can query components without a DOM-ready listener. -->
-    <script src="../js/script.js?v=9"></script>
+    <script src="../js/script.js?v=10"></script>
 
 
 </body></html>

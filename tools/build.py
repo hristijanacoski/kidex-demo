@@ -10,10 +10,12 @@ from urllib.parse import urlsplit
 from bs4 import BeautifulSoup, Comment, Doctype
 import json
 import zipfile
+import subprocess
 
 # Resolve paths from this file, not the caller's current working directory.
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ('index.html', 'about.html', 'services.html', 'contact.html')
+PUBLIC_PAGES = PAGES + ('projects.html',)
 BASE = 'https://kidex.mk/'
 catalog = json.loads((ROOT / 'translations/mk.json').read_text(encoding='utf-8'))
 
@@ -82,9 +84,13 @@ for filename in PAGES:
     seo(mk, filename, 'mk')
     (ROOT / 'mk' / filename).write_text(str(mk).rstrip()+'\n',encoding='utf-8')
 
+# Projects have their own bilingual content manifest; render them after the
+# shared Contact header/footer have been regenerated in both languages.
+subprocess.run(['node', str(ROOT / 'tools' / 'build-projects.cjs')], check=True)
+
 # Fail before packaging if a local file, anchor target or unique ID is invalid.
 # External URLs are intentionally not fetched by the build.
-for page in [ROOT / p for p in PAGES]+[ROOT/'mk'/p for p in PAGES]:
+for page in [ROOT / p for p in PUBLIC_PAGES]+[ROOT/'mk'/p for p in PUBLIC_PAGES]:
     soup=BeautifulSoup(page.read_text(encoding='utf-8'),'html.parser')
     ids=[t['id'] for t in soup.select('[id]')]
     if len(ids) != len(set(ids)): raise ValueError(f'Duplicate IDs: {page}')
@@ -101,16 +107,16 @@ for page in [ROOT / p for p in PAGES]+[ROOT/'mk'/p for p in PAGES]:
                 if not linked.find(id=url.fragment): raise ValueError(f'Broken anchor {page}: {url.geturl()}')
 
 # Home pages use their folder URLs; the other pages keep explicit .html paths.
-urls=[BASE+prefix+('' if f=='index.html' else f) for prefix in ('','mk/') for f in PAGES]
+urls=[BASE+prefix+('' if f=='index.html' else f) for prefix in ('','mk/') for f in PUBLIC_PAGES]
 sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{u}</loc></url>\n' for u in urls)+'</urlset>\n'
 (ROOT/'sitemap.xml').write_text(sitemap,encoding='utf-8')
 dist=ROOT/'dist'
 dist.mkdir(exist_ok=True)
 # An explicit allowlist keeps tooling, audit screenshots and Git metadata out of uploads.
 with zipfile.ZipFile(dist/'kidex-hosting.zip','w',zipfile.ZIP_DEFLATED) as archive:
-    for name in (*PAGES,'mk','css','js','images','favicon','.htaccess','_redirects','robots.txt','sitemap.xml'):
+    for name in (*PUBLIC_PAGES,'mk','css','js','images','documents','favicon','.htaccess','_redirects','robots.txt','sitemap.xml'):
         path=ROOT/name
         files=path.rglob('*') if path.is_dir() else [path]
         for file in files:
-            if file.is_file(): archive.write(file,file.relative_to(ROOT))
-print('Built and validated 8 bilingual pages. Upload package: dist/kidex-hosting.zip')
+            if file.is_file() and file.suffix.lower() != '.md': archive.write(file,file.relative_to(ROOT))
+print('Built and validated 10 bilingual pages. Upload package: dist/kidex-hosting.zip')

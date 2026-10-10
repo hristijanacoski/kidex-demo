@@ -1,6 +1,6 @@
 # About and Services photography
 
-Updated 2026-09-28. These additions are real stock photographs from Pexels. They illustrate the services and do not depict KIDEX employees, facilities or a specific equipment supplier. No AI generation or generative editing was used for these assets; only cropping, resizing and WebP compression.
+Updated 2026-10-01. The stock photographs listed below are from Pexels. They illustrate the services and do not depict KIDEX employees or facilities. The Laboratory Equipment section now uses the official Mixolab 300 photograph documented separately below. No AI generation or generative editing was used.
 
 | Website asset | Photographer | Original photograph | Published |
 | --- | --- | --- | --- |
@@ -16,4 +16,12 @@ The source pages identify the photographers and camera metadata: Canon EOS R for
 
 ## Website exports
 
-Each photo has 1200 × 800 and 600 × 400 WebP versions. Pages use responsive srcset, lazy loading, descriptive English/Macedonian alt text and explicit dimensions. Downloads and the crop/export script remain in the excluded local .audit/ directory. The rejected AI-generated assets were removed from the website's images/ directory.
+The Pexels photos have 1200 × 800 and 600 × 400 WebP versions. Pages use responsive srcset, lazy loading, descriptive English/Macedonian alt text and explicit dimensions. Downloads and the crop/export script remain in the excluded local .audit/ directory. The rejected AI-generated assets were removed from the website's images/ directory.
+
+## Mixolab 300
+
+- Website assets: `mixolab-300.webp` and `mixolab-300-600.webp`, used on both Services pages in place of the generic laboratory balance photograph.
+- Source: [KPM Analytics, How Emmi Desserts Transformed Its Process Control with Mixolab](https://www.kpmanalytics.com/resources/categories/resource-center/how-mademoiselle-desserts-transformed-its-process-control-with-mixolab). The manufacturer captions this photograph "Mixolab 300 Universal Dough Analyzer."
+- [Original photograph](https://cdn.prod.website-files.com/63cf34956bc59159af577c42/69fc94f1e593ec68f96c3775_Mixolab300.avif), 2000 × 1300 pixels. It shows the analyzer on a laboratory bench, without a computer.
+- Exports: 1200 × 780 and 600 × 390 WebP, preserving the original photograph with resizing and compression only. The existing 3:2 website frame applies a minimal centered crop. Both language versions use responsive sources, descriptive alt text, explicit dimensions and lazy loading. The source and export script remain in the excluded `.audit/` directory.
+- This is manufacturer imagery, not Pexels stock. No reuse license was stated on the source page; the Pexels license above does not apply. Attribution records the source and does not establish reuse permission.

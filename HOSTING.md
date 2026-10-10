@@ -2,7 +2,7 @@
 
 For the code map, responsive rules, commenting conventions, and browser checks, see [MAINTENANCE.md](MAINTENANCE.md).
 
-The website is ready for static hosting. There are four English pages at the root and four Macedonian pages in `mk/`. No Node.js, PHP, database, CSS framework or build service is required on the host.
+The website is ready for static hosting. There are five English pages at the root and five Macedonian pages in `mk/`. No Node.js, PHP, database, CSS framework or build service is required on the host.
 
 ## Upload
 
@@ -30,6 +30,8 @@ python tools/build.py
 ```
 
 This regenerates `mk/`, language metadata, `sitemap.xml`, validates internal links and anchor targets, and creates `dist/kidex-hosting.zip`. Generated Macedonian pages are included alongside the English pages, so normal hosting needs no build.
+
+The full build also requires Node.js on your development computer to generate the Projects pages. See [PROJECTS.md](PROJECTS.md) for adding project reports and presentations. Publish `documents/` alongside the pages; PDF previews and PowerPoint downloads use local files. `data/` and `tools/` are editing inputs and are excluded from the public archive. Draft project records are hidden, but any files uploaded under `documents/` remain publicly accessible by URL.
 
 Local preview:
 

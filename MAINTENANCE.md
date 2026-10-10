@@ -13,13 +13,15 @@ This is a static website: HTML, one shared CSS file, one shared JavaScript file,
 | `js/script.js` | Header shadow, mobile menu, language dropdown, showcase, copyright year, email-draft form. |
 | `images/`, `favicon/` | Local assets. Photo sources are documented in `images/photo-sources.md`. |
 | `tools/build.py` | Regenerates MK pages, refreshes SEO/sitemap, validates local links, creates the upload archive. |
+| `data/projects.json`, `documents/projects/` | Bilingual project details and public PDF/PowerPoint files. See [PROJECTS.md](PROJECTS.md). |
+| `tools/build-projects.cjs`, `js/projects.js` | Generates both Projects pages; progressively enhances PDF previews. |
 | `tools/*.cjs`, `tools/check_site.py` | Local browser checks; never deployed as website code. |
 | `.htaccess`, `_redirects`, `robots.txt`, `sitemap.xml` | Hosting redirects and search-engine discovery. |
 | `.audit/`, `dist/` | Ignored local reports/screenshots and generated upload packages. |
 
 ## Editing pages and translations
 
-1. Edit the English source page. Shared headers and footers appear in all four source pages, so update all four when changing either component.
+1. Edit the English source page. Shared headers and footers appear in all four source pages, so update all four when changing either component. The two Projects pages inherit them from Contact when regenerated; edit project records in `data/projects.json` instead of their generated HTML.
 2. When text changes, add the exact new English key and its Macedonian value to `translations/mk.json`. This includes `alt`, `aria-label`, and social/search descriptions. JSON does not support comments; keep explanations in this guide.
 3. Rebuild and inspect both languages. A manual edit to `mk/` alone will be overwritten by the next build.
 4. Check desktop and mobile, then run the relevant browser checks below.
@@ -54,7 +56,7 @@ After changing CSS or JS, update the `?v=` number on the matching asset URL in t
 
 ## Local build and preview
 
-Run from the repository root with Python installed:
+Run from the repository root with Python and Node.js installed. Node generates the Projects pages; neither runtime is needed on the hosting server:
 
 ```powershell
 python -m pip install -r tools/requirements.txt
@@ -79,6 +81,7 @@ The scripts can instead use an existing installation by taking its module direct
 node tools/inspect-layout.cjs
 node tools/qa-site.cjs playwright maintenance-check chromium
 node tools/check-showcase.cjs
+node tools/check-projects.cjs
 ```
 
 `inspect-layout.cjs` and `qa-site.cjs` start their own loopback servers. The showcase check uses local files. Reports and screenshots go to `.audit/`. The general suite reports skipped accessibility checks as limitations if axe-core is absent; do not treat a skipped scan as a pass.

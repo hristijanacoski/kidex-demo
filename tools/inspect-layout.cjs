@@ -32,7 +32,7 @@ const server = http.createServer((req, res) => {
     for (const width of [320, 360, 390, 620, 621, 768, 860, 861, 1024, 1080, 1081, 1100, 1101, 1440, 1920]) {
       await page.setViewportSize({ width, height: 900 });
       for (const lang of ['', 'mk/']) {
-        for (const name of ['index', 'about', 'services', 'contact']) {
+        for (const name of ['index', 'about', 'services', 'projects', 'contact']) {
           await page.goto(`${base}${lang}${name}.html`);
           await page.locator('img').evaluateAll(images => images.forEach(i => i.loading = 'eager'));
           await page.evaluate(() => Promise.all(Array.from(document.images, i => i.decode())));
@@ -81,7 +81,8 @@ const server = http.createServer((req, res) => {
           assert.deepEqual(issues, [], `${lang}${name} at ${width}px: ${issues.join(', ')}`);
           if (width === 390) {
             // Exact English text must exist in the catalog before regenerating MK pages.
-            if (!lang) {
+            // Projects use bilingual manifest entries, validated by their generator.
+            if (!lang && name !== 'projects') {
               const strings = await page.evaluate(() => {
                 const strings = [];
                 const walker = document.createTreeWalker(document.documentElement, NodeFilter.SHOW_TEXT);
@@ -110,7 +111,7 @@ const server = http.createServer((req, res) => {
           results.push(`${lang}${name}: ${width}px OK`);
         }
       }
-      console.log(`PASS: all eight pages at ${width}px`);
+      console.log(`PASS: all ten pages at ${width}px`);
     }
     // After static layouts, exercise focus restoration and cross-language hash links.
     await page.setViewportSize({ width: 390, height: 844 });
