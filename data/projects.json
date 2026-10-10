@@ -1,4 +1,29 @@
 {
   "schemaVersion": 1,
-  "projects": []
+  "projects": [
+    {
+      "id": "toni-acoski",
+      "published": true,
+      "title": {
+        "en": "Toni Acoski - business card",
+        "mk": "Тони Ацоски - визит-картичка"
+      },
+      "summary": {
+        "en": "A two-page business card with contact details for Toni Acoski, CEO and founder of KIDEX.",
+        "mk": "Визит-картичка на две страници со контактни податоци за Тони Ацоски, извршен директор и основач на KIDEX."
+      },
+      "role": {
+        "en": "Company presentation",
+        "mk": "Претставување на компанијата"
+      },
+      "location": {
+        "en": "Tetovo, North Macedonia",
+        "mk": "Тетово, Северна Македонија"
+      },
+      "documents": [
+        { "file": "documents/projects/toni-acoski-test.pdf" }
+      ],
+      "cover": "images/projects/toni-acoski.webp"
+    }
+  ]
 }

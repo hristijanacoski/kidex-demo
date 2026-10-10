@@ -34,6 +34,17 @@ const server=http.createServer((req,res)=>{
   manifest(valid);assert.equal(build(fixture),2);
   assert(!fs.readFileSync(path.join(fixture,'projects.html'),'utf8').includes('DO NOT PUBLISH'));
   checks.push('Draft exclusion and bilingual generation');
+  // Business cards and other reference documents may have no event date.
+  const undated={...project,id:'undated-document'};delete undated.date;
+  manifest([undated,project]);assert.equal(build(fixture),2);
+  assert.equal(readProjects(fixture)[0].id,project.id);
+  for(const lang of ['','mk/']){
+   const html=fs.readFileSync(path.join(fixture,lang+'projects.html'),'utf8');
+   const card=html.match(/<article class="project-card" id="project-undated-document"[\s\S]*?<\/article>/)[0];
+   assert(!card.includes('<time'));
+   assert(!card.includes('undefined'));
+  }
+  checks.push('Undated documents render without fabricated dates and sort after dated projects');
   for(const [label,change] of [
    ['missing translation',p=>{p.title.mk='';}],['invalid date',p=>{p.date='2026-02-31';}],
    ['traversal',p=>{p.documents[0].file='documents/projects/../../contact.html';}],

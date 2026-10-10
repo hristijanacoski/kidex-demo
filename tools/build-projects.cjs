@@ -12,7 +12,7 @@ const copy = {
     name:'Projects', title:'Projects - KIDEX', description:'Explore projects supported by KIDEX, with project reports and presentations to preview and download.',
     eyebrow:'Experience in practice', heading:'Our work, documented.', intro:'A closer look at the projects, events and collaborations where KIDEX contributes practical knowledge.',
     library:'Project library', libraryIntro:'Explore our involvement and read the story behind each project.',
-    report:'Project report', role:'Our role', preview:'Preview report', download:'Download', powerpoint:'PowerPoint',
+    report:'Project document', role:'Our role', preview:'Preview document', download:'Download', powerpoint:'PowerPoint',
     emptyTitle:'New project stories are on their way.', emptyText:'We are preparing reports and presentations from our work. Visit again soon to explore them.',
     contact:'Talk to us about a project', close:'Close preview', open:'Open PDF in a new tab', help:'If the preview does not appear on your device, open the PDF in a new tab or download it.',
     home:'Home', pdfTitle:'Project document preview'
@@ -21,7 +21,7 @@ const copy = {
     name:'Проекти', title:'Проекти - KIDEX', description:'Запознајте ги проектите во кои учествува KIDEX. Прегледајте и преземете извештаи и презентации.',
     eyebrow:'Искуство во практика', heading:'Нашата работа низ проекти.', intro:'Запознајте ги проектите, настаните и соработките во кои KIDEX придонесува со практично знаење.',
     library:'Нашите проекти', libraryIntro:'Дознајте повеќе за нашата улога и за секој проект.',
-    report:'Извештај за проектот', role:'Нашата улога', preview:'Прегледајте го извештајот', download:'Преземете', powerpoint:'PowerPoint',
+    report:'Документ за проектот', role:'Нашата улога', preview:'Прегледајте го документот', download:'Преземете', powerpoint:'PowerPoint',
     emptyTitle:'Наскоро ќе ги претставиме нашите проекти.', emptyText:'Подготвуваме извештаи и презентации од нашата работа. Посетете нè повторно за да ги разгледате.',
     contact:'Разговарајте со нас за проект', close:'Затворете го прегледот', open:'Отворете го PDF-документот во ново јазиче', help:'Ако прегледот не се прикажува на вашиот уред, отворете го PDF-документот во ново јазиче или преземете го.',
     home:'Почетна', pdfTitle:'Преглед на документ за проект'
@@ -69,7 +69,9 @@ function readProjects(root) {
     if (typeof project.published !== 'boolean') throw new Error(`${project.id}: published must be true or false`);
     if (!project.published) return []; // Drafts may still have placeholder dates and missing documents.
     localized(project.title,'title'); localized(project.summary,'summary'); localized(project.role,'role'); localized(project.location,'location',true);
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(project.date) || !Number.isFinite(Date.parse(project.date)) || new Date(project.date).toISOString().slice(0,10)!==project.date) throw new Error(`${project.id}: use a real event date in YYYY-MM-DD format`);
+    // Undated documents can be published without inventing an event date.
+    // When a date is supplied, retain the same strict calendar validation.
+    if (project.date !== undefined && (!/^\d{4}-\d{2}-\d{2}$/.test(project.date) || !Number.isFinite(Date.parse(project.date)) || new Date(project.date).toISOString().slice(0,10)!==project.date)) throw new Error(`${project.id}: use a real event date in YYYY-MM-DD format`);
     if (!Array.isArray(project.documents)||!project.documents.length) throw new Error(`${project.id}: add at least one document`);
     const documents=project.documents.map(doc=>publicFile(root,doc.file,['.pdf','.ppt','.pptx'],'documents/projects'));
     if (new Set(documents.map(doc=>doc.file)).size!==documents.length) throw new Error(`${project.id}: duplicate document`);
@@ -79,7 +81,7 @@ function readProjects(root) {
     if (!preview) throw new Error(`${project.id}: include a PDF export for preview (documents or preview field)`);
     const cover=project.cover ? publicFile(root,project.cover,['.webp','.jpg','.jpeg','.png'],'images/projects') : null;
     return [{...project,documents,preview,cover}];
-  }).sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id));
+  }).sort((a,b)=>(b.date||'').localeCompare(a.date||'')||a.id.localeCompare(b.id));
 }
 
 function size(bytes,lang) {
@@ -91,13 +93,13 @@ function content(projects,lang) {
   const t=copy[lang], prefix=lang==='mk'?'../':'';
   const cards=projects.map(project=>{
     const title=escape(project.title[lang]);
-    const date=new Intl.DateTimeFormat(lang==='mk'?'mk-MK':'en-GB',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(project.date));
+    const date=project.date ? new Intl.DateTimeFormat(lang==='mk'?'mk-MK':'en-GB',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(new Date(project.date)) : '';
     const preview=`${prefix}${project.preview.file}`;
-    const cover=project.cover ? `<img src="${escape(prefix+project.cover.file)}" alt="" loading="lazy" decoding="async">` : `<div class="project-paper">${icon}<span>${escape(t.report)}</span><strong>${title}</strong><span class="project-paper-brand">KIDEX / ${project.date.slice(0,4)}</span></div>`;
+    const cover=project.cover ? `<img src="${escape(prefix+project.cover.file)}" alt="" loading="lazy" decoding="async">` : `<div class="project-paper">${icon}<span>${escape(t.report)}</span><strong>${title}</strong><span class="project-paper-brand">KIDEX${project.date?' / '+project.date.slice(0,4):''}</span></div>`;
     const downloads=project.documents.map(doc=>`<a class="project-download" href="${escape(prefix+doc.file)}" download>${escape(t.download)} ${doc.extension==='.pdf'?'PDF':t.powerpoint}<span>${size(doc.bytes,lang)}</span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></a>`).join('');
     return `<article class="project-card" id="project-${escape(project.id)}" aria-labelledby="title-project-${project.id}">
       <a class="project-cover" href="${escape(preview)}" data-project-preview data-project-title="${title}" aria-label="${escape(t.preview)}: ${title}">${cover}<span class="project-cover-label">PDF</span></a>
-      <div class="project-card-body"><div class="project-meta"><time datetime="${project.date}">${escape(date)}</time>${project.location?`<span>${escape(project.location[lang])}</span>`:''}</div>
+      <div class="project-card-body">${date||project.location?`<div class="project-meta">${date?`<time datetime="${project.date}">${escape(date)}</time>`:''}${project.location?`<span>${escape(project.location[lang])}</span>`:''}</div>`:''}
       <h3 id="title-project-${project.id}">${title}</h3><p>${escape(project.summary[lang])}</p>
       <dl class="project-role"><dt>${escape(t.role)}</dt><dd>${escape(project.role[lang])}</dd></dl>
       <a class="btn btn-dark project-preview-link" href="${escape(preview)}" data-project-preview data-project-title="${title}">${icon}${escape(t.preview)}</a>

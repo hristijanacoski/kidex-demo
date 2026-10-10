@@ -17,7 +17,7 @@ The public library is at `projects.html` and `mk/projects.html`. It supports pro
 6. Preview both language pages. Open a report, close it with Escape, and check both downloads on desktop and mobile.
 7. Commit and publish the updated `projects.html`, `mk/projects.html`, and the document files together, just like other website changes. Include `data/projects.json` in Git so the project remains editable. For a full hosting archive, run `python tools/build.py`; it calls the project generator and includes the documents automatically. Node.js is required on the development computer, not the hosting server.
 
-The first project has not been invented or pre-published. Until you add your final material, visitors see a short message that project reports are being prepared.
+The library currently includes the supplied Toni Acoski business card as a document entry. Add project reports using the same workflow. If no entries are published, visitors see a short message that reports are being prepared.
 
 ## Fields
 
@@ -25,7 +25,7 @@ The first project has not been invented or pre-published. Until you add your fin
 | --- | --- |
 | `id` | Unique lowercase name with hyphens. Keep it stable; a project can be linked as `projects.html#project-pizza-championship-skopje`. |
 | `published` | `true` includes the project; `false` keeps its text and links out of the generated pages. |
-| `date` | Actual event/project date in `YYYY-MM-DD` format. Newest projects appear first. |
+| `date` | Optional actual event/project date in `YYYY-MM-DD` format. Omit it for undated documents. Newest projects appear first, followed by undated entries. |
 | `title`, `summary`, `role` | Objects with `en` and `mk` text. Both languages are required before publishing. |
 | `location` | Optional object with `en` and `mk` text. |
 | `documents` | Array of `{ "file": "documents/projects/your-file.pdf" }` entries. Each appears as a download with its format and file size. |
@@ -37,7 +37,7 @@ No HTML is needed in the project text. The generator escapes all text, checks lo
 ## What visitors see
 
 - Cards show the title, date, location, KIDEX's role and a short description.
-- **Preview report** opens the PDF in a dialog using the browser's PDF viewer. The PDF is loaded only when requested.
+- **Preview document** opens the PDF in a dialog using the browser's PDF viewer. The PDF is loaded only when requested.
 - Open-in-new-tab and download links are always available if a device cannot display an embedded PDF.
 - Without JavaScript, preview links open the PDF directly and downloads still work.
 - Presentations are served from your own site; no third-party Office viewer receives your documents.
